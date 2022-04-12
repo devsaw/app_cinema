@@ -1,2 +1,66 @@
-# app_cinema
-Repositório do projeto PI Digital House
+# PI App_Cinema
+
+![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/FqrTsTG/nova.jpg" alt="nova" border="0"></a>
+
+App Cinema feito para gestão de filmes assistidos, para assistir e com opção de favoritá-los.
+### :wrench: Ajustes e melhorias
+
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+
+- [x] Tarefa 1 - Sistema de login
+- [ ] Tarefa 2 - Recuperação de senha
+- [ ] Tarefa 3 - Tela Principal/Filmes
+- [ ] Tarefa 4 - Tela de Usuário
+- [ ] Tarefa 5 - Canais de gerenciamento
+
+## 💻 Pré-requisitos
+
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
+* Você tem uma máquina `<Windows / Linux / Mac>`.
+
+## :raising_hand_man: Colaboradores
+
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/95660431?s=400&u=f7e06bd2545d81279c38b8b4593fe76c052dff39&v=4" width="100px;" alt="https://github.com/devsaw"
+             <p><a href="https://github.com/devsaw"><br>
+        <sub>
+          <b>devsaw</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Thiago"<p><a href="https://github.com/devsaw"><br>
+        <sub>
+          <b>thiago</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Gustavo"
+             <p><a href="https://github.com/devsaw"><br>
+        <sub>
+          <b>gustavo</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+## 📝 Licença
+
+Esse projeto está sem licença.
+<br>
