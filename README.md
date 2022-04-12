@@ -42,9 +42,9 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Thiago"<p><a href="https://github.com/devsaw"><br>
+        <img src="https://avatars.githubusercontent.com/u/78929536?v=4" width="100px;" alt="Thiago"<p><a href="https://github.com/TPALLARO"><br>
         <sub>
-          <b>thiago</b>
+          <b>TPALLARO</b>
         </sub>
       </a>
     </td>
