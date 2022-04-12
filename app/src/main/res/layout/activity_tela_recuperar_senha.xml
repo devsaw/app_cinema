@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img13"
+    tools:context=".activities.TelaRecuperarSenha">
+
+    <ImageView
+        android:id="@+id/logoLogin"
+        android:layout_width="262dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/essaqui" />
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="315dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/nosifer"
+        android:text="Cine Ex"
+        android:textColor="@color/redt"
+        android:textSize="55dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/filmeRecuperarSenha"
+        android:layout_width="403dp"
+        android:layout_height="131dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.768"
+        app:srcCompat="@drawable/photo" />
+
+    <EditText
+        android:id="@+id/editTextEmailRecuperarSenha"
+        android:layout_width="243dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="424dp"
+        android:ems="10"
+        android:hint="Digite seu e-mail"
+        android:inputType="textPersonName"
+        android:textColor="@color/redt"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRecuperarSenha"
+        android:layout_width="158dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="532dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/nosifer"
+        android:text="Recuperar Senha"
+        android:textColor="@color/red"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/escritaRecuperarSenha"
+        android:layout_width="335dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="296dp"
+        android:text="É fácil recuperar a sua senha, digite seu e-mail abaixo, iremos enviar sua senha em seguida."
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
