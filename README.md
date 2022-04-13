@@ -50,10 +50,10 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Gustavo"
-             <p><a href="https://github.com/devsaw"><br>
+        <img src="https://avatars.githubusercontent.com/u/95660427?v=4" width="100px;" alt="Gustavo"
+             <p><a href="https://github.com/GustavoDSabino"><br>
         <sub>
-          <b>gustavo</b>
+          <b>GustavoDSabino</b>
         </sub>
       </a>
     </td>
