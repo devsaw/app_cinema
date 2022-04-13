@@ -10,11 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_cinema">
         <activity
-            android:name=".activities.TelaCriarConta"
+            android:name=".activities.TelaRedefinirSenha"
             android:exported="false" />
         <activity
             android:name=".activities.TelaRecuperarSenha"
             android:exported="false" />
+        <activity
+            android:name=".activities.TelaCriarConta"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TelaLogin"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TelaInicial"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

@@ -61,16 +61,16 @@
 
     <Button
         android:id="@+id/btnRecuperarSenha"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="532dp"
+        android:layout_width="184dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="488dp"
         android:backgroundTint="@color/black"
         android:fontFamily="@font/nosifer"
         android:text="Recuperar Senha"
         android:textColor="@color/red"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img15"
-    tools:context=".activities.TelaCriarConta">
+    android:background="@drawable/img12"
+    tools:context=".activities.TelaRedefinirSenha">
 
     <ImageView
-        android:id="@+id/logoCriarConta"
+        android:id="@+id/logoRedefinirSenha"
         android:layout_width="262dp"
         android:layout_height="205dp"
         android:layout_marginTop="116dp"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/essaqui" />
 
     <TextView
-        android:id="@+id/textCriarConta"
+        android:id="@+id/textRedefinirSenha"
         android:layout_width="315dp"
         android:layout_height="84dp"
         android:layout_marginTop="48dp"
@@ -33,70 +33,58 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/filmeCriarConta1"
-        android:layout_width="353dp"
-        android:layout_height="138dp"
+        android:id="@+id/filmeRedefinirSenha"
+        android:layout_width="403dp"
+        android:layout_height="131dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
+        app:layout_constraintVertical_bias="0.685"
         app:srcCompat="@drawable/photo" />
 
     <EditText
-        android:id="@+id/editTextUsuarioCriar"
+        android:id="@+id/editTextSenhaRedefinir"
         android:layout_width="243dp"
         android:layout_height="67dp"
         android:layout_marginTop="296dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Digite seu usuário"
-        android:textSize="20dp"
+        android:hint="Digite sua senha atual"
         android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:textColor="@color/redt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextSenhaCriar"
+        android:id="@+id/editTextSenhaNovaRedefinir"
         android:layout_width="243dp"
         android:layout_height="67dp"
         android:layout_marginTop="360dp"
         android:ems="10"
-        android:hint="Digite sua senha"
-        android:inputType="textPersonName"
+        android:hint="Digite sua nova senha"
         android:textColorHint="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextEmailCriar"
-        android:layout_width="243dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="424dp"
-        android:ems="10"
-        android:hint="Digite seu e-mail"
         android:inputType="textPersonName"
-        android:textColorHint="@color/white"
+        android:textColor="@color/redt"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCriarContaCriarConta"
-        android:layout_width="208dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="508dp"
+        android:id="@+id/btnRedefinirSenha"
+        android:layout_width="156dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="436dp"
         android:backgroundTint="@color/black"
         android:fontFamily="@font/nosifer"
-        android:text="Criar conta"
+        android:text="Redefinir senha"
         android:textColor="@color/red"
-        android:textSize="17dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
