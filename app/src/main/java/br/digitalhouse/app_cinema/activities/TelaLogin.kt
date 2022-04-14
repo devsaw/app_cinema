@@ -13,14 +13,21 @@ class TelaLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_login)
+        botaoLogar()
+        botaoEsqueciSenha()
+    }
 
+
+
+    fun botaoLogar(){
         var btnLogar = findViewById<Button>(R.id.btnLogarLogin)
         btnLogar.setOnClickListener { validaBotaoLogar() }
+    }
 
+    fun botaoEsqueciSenha(){
         var btnEsqueciSenha = findViewById<Button>(R.id.btnEsqueciSenhaLogin)
         btnEsqueciSenha.setOnClickListener { intencaoTelaRecuperarSenha() }
     }
-
 
     fun validaBotaoLogar() {
         var textSenhaLogar = findViewById<EditText>(R.id.editTextSenha)

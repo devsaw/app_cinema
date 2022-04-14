@@ -10,18 +10,25 @@ class TelaInicial : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
+        botaoLogar()
+        botaoIniciar()
 
-        var btnInicialLogar = findViewById<Button>(R.id.btnLogarInicial)
-        btnInicialLogar.setOnClickListener {
-            intencaoTelaLogin()
-        }
+    }
 
+
+    fun botaoIniciar() {
         var btnInicialCriar = findViewById<Button>(R.id.btnCriarContaInicial)
         btnInicialCriar.setOnClickListener {
             intencaoTelaCriarConta()
         }
     }
 
+    fun botaoLogar() {
+        var btnInicialLogar = findViewById<Button>(R.id.btnLogarInicial)
+        btnInicialLogar.setOnClickListener {
+            intencaoTelaLogin()
+        }
+    }
 
     fun intencaoTelaLogin() {
         var intent1 = Intent(this, TelaLogin::class.java)
