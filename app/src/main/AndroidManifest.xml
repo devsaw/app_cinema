@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_cinema">
         <activity
+            android:name=".activities.TelaAssistidos"
+            android:exported="false" />
+        <activity
             android:name=".activities.TelaParaAssistir"
             android:exported="false" />
         <activity
