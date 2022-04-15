@@ -17,8 +17,6 @@ class TelaLogin : AppCompatActivity() {
         botaoEsqueciSenha()
     }
 
-
-
     fun botaoLogar(){
         var btnLogar = findViewById<Button>(R.id.btnLogarLogin)
         btnLogar.setOnClickListener { validaBotaoLogar() }
@@ -43,7 +41,7 @@ class TelaLogin : AppCompatActivity() {
         } else {
             if (validacao && validaEmail) {
                 Toast.makeText(this, "${textEmailLogar.text} Logado!", Toast.LENGTH_SHORT).show()
-                var intent2 = Intent(this, TelaPrincipal::class.java)
+                var intent2 = Intent(this, MainActivity::class.java)
                 startActivity(intent2)
             } else {
                 Toast.makeText(this, "Dados incorretos", Toast.LENGTH_SHORT).show()
