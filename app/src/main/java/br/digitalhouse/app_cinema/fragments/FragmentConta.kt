@@ -20,16 +20,12 @@ import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.activities.MainActivity
 import br.digitalhouse.app_cinema.activities.TelaRedefinirSenha
 
-class FragmentConta : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+class FragmentConta : Fragment(R.layout.fragment_conta) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         botaoTirar()
         botaoAbrir()
         botaoRedefinir()
-        return inflater.inflate(R.layout.fragment_conta, container, false)
     }
 
     @RequiresApi(Build.VERSION_CODES.S)
