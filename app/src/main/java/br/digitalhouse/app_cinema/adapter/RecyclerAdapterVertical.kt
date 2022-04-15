@@ -16,13 +16,15 @@ class RecyclerAdapterVertical() :
 
 
     override fun onBindViewHolder(holder: VerticalHolder, position: Int) {
-
+        
     }
 
     override fun getItemCount(): Int = 7
 
     inner class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        fun bind() {
 
+        }
     }
 }
