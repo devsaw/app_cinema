@@ -9,6 +9,9 @@
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/FqrTsTG/nova.jpg" alt="nova" border="0"></a>
 
 App Cinema feito para gestão de filmes assistidos, para assistir e com opção de favoritá-los.
+
+## 🔧 [Kotlin](https://kotlinlang.org/)
+
 ### :wrench: Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
