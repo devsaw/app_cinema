@@ -1,30 +1,25 @@
-package br.digitalhouse.app_cinema.activities
+package br.digitalhouse.app_cinema.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.data.Usuario
+import br.digitalhouse.app_cinema.data.UsuarioDataClass
 
-class TelaLogin : AppCompatActivity() {
+class TelaLoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_login)
         botaoLogar()
-        botaoEsqueciSenha()
     }
 
     fun botaoLogar(){
-        var btnLogar = findViewById<Button>(R.id.btnLogarLogin)
+        var btnLogar = findViewById<ImageButton>(R.id.btnLogarLogin)
         btnLogar.setOnClickListener { validaBotaoLogar() }
-    }
-
-    fun botaoEsqueciSenha(){
-        var btnEsqueciSenha = findViewById<Button>(R.id.btnEsqueciSenhaLogin)
-        btnEsqueciSenha.setOnClickListener { intencaoTelaRecuperarSenha() }
     }
 
     fun validaBotaoLogar() {
@@ -33,7 +28,7 @@ class TelaLogin : AppCompatActivity() {
         var textEmailLogar = findViewById<EditText>(R.id.editTextUsuario)
         val loginInformado = textEmailLogar.text.toString()
 
-        val usuario = Usuario(loginInformado, senhaInformada)
+        val usuario = UsuarioDataClass(loginInformado, senhaInformada)
         val validaEmail: Boolean = usuario.validaEmail(loginInformado)
         val validacao: Boolean = usuario.validaSenha(senhaInformada)
         if (textEmailLogar.text.isNullOrBlank() || textSenhaLogar.text.isNullOrBlank()) {
@@ -41,17 +36,12 @@ class TelaLogin : AppCompatActivity() {
         } else {
             if (validacao && validaEmail) {
                 Toast.makeText(this, "${textEmailLogar.text} Logado!", Toast.LENGTH_SHORT).show()
-                var intent2 = Intent(this, MainActivity::class.java)
+                var intent2 = Intent(this, TelaPrincipalActivity::class.java)
                 startActivity(intent2)
             } else {
                 Toast.makeText(this, "Dados incorretos", Toast.LENGTH_SHORT).show()
 
             }
         }
-    }
-
-    fun intencaoTelaRecuperarSenha(){
-        var intent3 = Intent(this, TelaRecuperarSenha::class.java)
-        startActivity(intent3)
     }
 }

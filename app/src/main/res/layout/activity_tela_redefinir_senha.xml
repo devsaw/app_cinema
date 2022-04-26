@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img12"
-    tools:context=".activities.TelaRedefinirSenha">
+    tools:context=".view.TelaRedefinirSenhaActivity">
 
     <ImageView
         android:id="@+id/logoRedefinirSenha"
@@ -31,17 +31,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/filmeRedefinirSenha"
-        android:layout_width="403dp"
-        android:layout_height="131dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685"
-        app:srcCompat="@drawable/photo" />
 
     <EditText
         android:id="@+id/editTextSenhaRedefinir"
@@ -73,18 +62,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnRedefinirSenha"
-        android:layout_width="156dp"
-        android:layout_height="68dp"
+        android:layout_width="307dp"
+        android:layout_height="108dp"
         android:layout_marginTop="436dp"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/nosifer"
-        android:text="Redefinir senha"
-        android:textColor="@color/red"
-        android:textSize="15dp"
+        android:background="@null"
+        android:src="@drawable/redefinirsenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

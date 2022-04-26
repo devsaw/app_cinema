@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img13"
-    tools:context=".activities.TelaRecuperarSenha">
+    tools:context=".view.TelaRecuperarSenhaActivity">
 
     <ImageView
         android:id="@+id/logoLogin"
@@ -32,17 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/filmeRecuperarSenha"
-        android:layout_width="403dp"
-        android:layout_height="131dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.768"
-        app:srcCompat="@drawable/photo" />
-
     <EditText
         android:id="@+id/editTextEmailRecuperarSenha"
         android:layout_width="243dp"
@@ -59,18 +48,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnRecuperarSenha"
-        android:layout_width="184dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="488dp"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/nosifer"
-        android:text="Recuperar Senha"
-        android:textColor="@color/red"
-        android:textSize="15dp"
+        android:layout_width="307dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="396dp"
+        android:background="@null"
+        android:src="@drawable/recuperarsenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

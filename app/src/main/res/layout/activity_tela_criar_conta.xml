@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img15"
-    tools:context=".activities.TelaCriarConta">
+    tools:context=".view.TelaCriarContaActivity">
 
     <ImageView
         android:id="@+id/logoCriarConta"
@@ -31,17 +31,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/filmeCriarConta1"
-        android:layout_width="353dp"
-        android:layout_height="138dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
-        app:srcCompat="@drawable/photo" />
 
     <EditText
         android:id="@+id/editTextUsuarioCriar"
@@ -85,18 +74,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCriarContaCriarConta"
-        android:layout_width="208dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="508dp"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/nosifer"
-        android:text="Criar conta"
-        android:textColor="@color/red"
-        android:textSize="17dp"
+        android:layout_width="307dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="496dp"
+        android:background="@null"
+        android:src="@drawable/criarconta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

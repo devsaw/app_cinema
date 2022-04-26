@@ -13,31 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_cinema">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".view.TelaPrincipalActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaAssistidos"
+            android:name=".view.TelaAssistidosActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaParaAssistir"
+            android:name=".view.TelaParaAssistirActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaFavoritos"
+            android:name=".view.TelaFavoritosActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaRedefinirSenha"
+            android:name=".view.TelaRedefinirSenhaActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaRecuperarSenha"
+            android:name=".view.TelaRecuperarSenhaActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaCriarConta"
+            android:name=".view.TelaCriarContaActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaLogin"
+            android:name=".view.TelaLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TelaInicial"
+            android:name=".view.TelaInicialActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

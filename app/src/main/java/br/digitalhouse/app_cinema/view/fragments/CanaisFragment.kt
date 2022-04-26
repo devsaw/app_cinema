@@ -1,19 +1,16 @@
-package br.digitalhouse.app_cinema.fragments
+package br.digitalhouse.app_cinema.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.activities.TelaAssistidos
-import br.digitalhouse.app_cinema.activities.TelaFavoritos
-import br.digitalhouse.app_cinema.activities.TelaParaAssistir
-import br.digitalhouse.app_cinema.activities.TelaRedefinirSenha
+import br.digitalhouse.app_cinema.view.TelaAssistidosActivity
+import br.digitalhouse.app_cinema.view.TelaFavoritosActivity
+import br.digitalhouse.app_cinema.view.TelaParaAssistirActivity
 
-class FragmentCanais : Fragment(R.layout.fragment_canais) {
+class CanaisFragment : Fragment(R.layout.fragment_canais) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         botaoFavoritos()
@@ -25,7 +22,7 @@ class FragmentCanais : Fragment(R.layout.fragment_canais) {
     fun botaoFavoritos() {
         var btnFavoritos = view?.findViewById<Button>(R.id.btnFavoritos)
         btnFavoritos?.setOnClickListener {
-            var intentFav = Intent(requireContext(), TelaFavoritos::class.java)
+            var intentFav = Intent(requireContext(), TelaFavoritosActivity::class.java)
             startActivity(intentFav)
         }
     }
@@ -33,7 +30,7 @@ class FragmentCanais : Fragment(R.layout.fragment_canais) {
     fun botaoAssistir() {
         var btnAssistir = view?.findViewById<Button>(R.id.btnParaAssistir)
         btnAssistir?.setOnClickListener {
-            var intentAssist = Intent(requireContext(), TelaParaAssistir::class.java)
+            var intentAssist = Intent(requireContext(), TelaParaAssistirActivity::class.java)
             startActivity(intentAssist)
         }
     }
@@ -41,7 +38,7 @@ class FragmentCanais : Fragment(R.layout.fragment_canais) {
     fun botaoAssistidos() {
         var btnAssistidos = view?.findViewById<Button>(R.id.btnAssistidos)
         btnAssistidos?.setOnClickListener {
-            var intentAssistidos = Intent(requireContext(), TelaAssistidos::class.java)
+            var intentAssistidos = Intent(requireContext(), TelaAssistidosActivity::class.java)
             startActivity(intentAssistidos)
         }
     }

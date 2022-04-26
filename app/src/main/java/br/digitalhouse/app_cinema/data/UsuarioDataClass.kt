@@ -1,6 +1,6 @@
 package br.digitalhouse.app_cinema.data
 
-data class Usuario(
+data class UsuarioDataClass(
     val login: String,
     val senha: String
 ) {

@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
 
-class RecyclerAdapterHorizontal() :
-    RecyclerView.Adapter<RecyclerAdapterHorizontal.HorizontalHolder>() {
+class RecyclerHorizontalAdapter() :
+    RecyclerView.Adapter<RecyclerHorizontalAdapter.HorizontalHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = HorizontalHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.recycler_item_filmes, parent, false)

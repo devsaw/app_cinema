@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img14"
-    tools:context=".activities.TelaLogin">
+    tools:context=".view.TelaLoginActivity">
 
     <ImageView
         android:id="@+id/logoLogin"
@@ -31,30 +31,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/filmeLogin"
-        android:layout_width="382dp"
-        android:layout_height="132dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.694"
-        app:srcCompat="@drawable/photo" />
-
-    <ImageView
-        android:id="@+id/filmeLogin2"
-        android:layout_width="382dp"
-        android:layout_height="132dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928"
-        app:srcCompat="@drawable/photo" />
 
     <EditText
         android:id="@+id/editTextUsuario"
@@ -85,33 +61,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnLogarLogin"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="452dp"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/nosifer"
-        android:text="Logar"
-        android:textColor="@color/red"
-        android:textSize="18dp"
+        android:layout_width="307dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="432dp"
+        android:background="@null"
+        android:src="@drawable/logar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnEsqueciSenhaLogin"
-        android:layout_width="162dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="576dp"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/nosifer"
-        android:text="Esqueci a senha"
-        android:textColor="@color/red"
-        android:textSize="14dp"
+        android:layout_width="307dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="552dp"
+        android:background="@null"
+        android:src="@drawable/esquecisenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

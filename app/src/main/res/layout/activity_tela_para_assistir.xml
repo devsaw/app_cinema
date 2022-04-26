@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.TelaParaAssistir"
+    tools:context=".view.TelaParaAssistirActivity"
     android:background="@color/black">
 
     <TextView
@@ -41,6 +41,7 @@
         android:background="@color/blue_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/recycler_item_canais"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textParaAssistir" />
 

@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.fragments
+package br.digitalhouse.app_cinema.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.adapter.RecyclerAdapterHorizontal
-import br.digitalhouse.app_cinema.adapter.RecyclerAdapterVertical
+import br.digitalhouse.app_cinema.adapter.RecyclerVerticalAdapter
 
-class FragmentFilmes : Fragment() {
+class FilmesFragment : Fragment() {
 
-    var recyclerAdapterVertical: RecyclerAdapterVertical? = null
+    var recyclerVerticalAdapter: RecyclerVerticalAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,8 +25,8 @@ class FragmentFilmes : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerAdapterVertical = RecyclerAdapterVertical()
-        view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = RecyclerAdapterVertical()
+        recyclerVerticalAdapter = RecyclerVerticalAdapter()
+        view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = RecyclerVerticalAdapter()
 
     }
 }

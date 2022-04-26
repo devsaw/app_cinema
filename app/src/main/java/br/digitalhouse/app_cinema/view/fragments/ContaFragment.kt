@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.fragments
+package br.digitalhouse.app_cinema.view.fragments
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -7,9 +7,7 @@ import android.graphics.ImageDecoder
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
@@ -17,10 +15,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.activities.MainActivity
-import br.digitalhouse.app_cinema.activities.TelaRedefinirSenha
+import br.digitalhouse.app_cinema.view.TelaRedefinirSenhaActivity
 
-class FragmentConta : Fragment(R.layout.fragment_conta) {
+class ContaFragment : Fragment(R.layout.fragment_conta) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         botaoTirar()
@@ -122,7 +119,7 @@ class FragmentConta : Fragment(R.layout.fragment_conta) {
     fun botaoRedefinir(){
         var botaoRedefinir = view?.findViewById<Button>(R.id.btnContaRedefinirSenha)
         botaoRedefinir?.setOnClickListener{
-            var intentRedefinir = Intent(requireContext(), TelaRedefinirSenha::class.java)
+            var intentRedefinir = Intent(requireContext(), TelaRedefinirSenhaActivity::class.java)
             startActivity(intentRedefinir)
         }
     }

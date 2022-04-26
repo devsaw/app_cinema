@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class TabsAdapterMain(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+class TabLayoutAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
     var listaDeFragmentos = mutableListOf<Fragment>()
     var listaDeTitulo = mutableListOf<String>()

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".view.TelaPrincipalActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
@@ -13,6 +13,10 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/myTabLayout"
+            app:tabIndicatorColor="@color/redt"
+            android:backgroundTint="@color/black"
+            app:tabTextColor="@color/redt"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
