@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.view.fragments
+package br.digitalhouse.app_cinema.fragments.conta.view
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -15,7 +15,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.view.TelaRedefinirSenhaActivity
+import br.digitalhouse.app_cinema.redefinirsenha.view.TelaRedefinirSenhaActivity
 
 class ContaFragment : Fragment(R.layout.fragment_conta) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

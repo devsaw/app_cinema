@@ -1,12 +1,12 @@
-package br.digitalhouse.app_cinema.view
+package br.digitalhouse.app_cinema.redefinirsenha.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.digitalhouse.app_cinema.R
 
-class TelaAssistidosActivity : AppCompatActivity() {
+class TelaRedefinirSenhaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_assistidos)
+        setContentView(R.layout.activity_tela_redefinir_senha)
     }
 }

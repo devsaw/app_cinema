@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.adapter
+package br.digitalhouse.app_cinema.adapter.adaptertablayout.view
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

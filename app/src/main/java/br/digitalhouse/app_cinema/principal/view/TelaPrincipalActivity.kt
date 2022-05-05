@@ -1,13 +1,13 @@
-package br.digitalhouse.app_cinema.view
+package br.digitalhouse.app_cinema.principal.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.adapter.TabLayoutAdapter
-import br.digitalhouse.app_cinema.view.fragments.CanaisFragment
-import br.digitalhouse.app_cinema.view.fragments.ContaFragment
-import br.digitalhouse.app_cinema.view.fragments.FilmesFragment
+import br.digitalhouse.app_cinema.adapter.adaptertablayout.view.TabLayoutAdapter
+import br.digitalhouse.app_cinema.fragments.canais.view.CanaisFragment
+import br.digitalhouse.app_cinema.fragments.conta.view.ContaFragment
+import br.digitalhouse.app_cinema.fragments.filmes.view.FilmesFragment
 import com.google.android.material.tabs.TabLayout
 
 class TelaPrincipalActivity : AppCompatActivity() {

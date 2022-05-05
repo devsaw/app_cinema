@@ -1,12 +1,12 @@
-package br.digitalhouse.app_cinema.view
+package br.digitalhouse.app_cinema.paraassistir.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.digitalhouse.app_cinema.R
 
-class TelaRecuperarSenhaActivity : AppCompatActivity() {
+class TelaParaAssistirActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_recuperar_senha)
+        setContentView(R.layout.activity_tela_para_assistir)
     }
 }

@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.view.fragments
+package br.digitalhouse.app_cinema.fragments.filmes.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.adapter.RecyclerVerticalAdapter
+import br.digitalhouse.app_cinema.adapter.adapterprincipal.view.RecyclerVerticalAdapter
 
 class FilmesFragment : Fragment() {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img15"
-    tools:context=".view.TelaCriarContaActivity">
+    tools:context=".criarconta.view.TelaCriarContaActivity">
 
     <ImageView
         android:id="@+id/logoCriarConta"
@@ -38,7 +38,9 @@
         android:layout_height="67dp"
         android:layout_marginTop="296dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLines="1"
+        android:maxLength="16"
         android:hint="Digite seu usuário"
         android:textSize="20dp"
         android:textColorHint="@color/white"
@@ -53,7 +55,9 @@
         android:layout_marginTop="360dp"
         android:ems="10"
         android:hint="Digite sua senha"
-        android:inputType="textPersonName"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLines="1"
+        android:maxLength="16"
         android:textColorHint="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +71,9 @@
         android:layout_marginTop="424dp"
         android:ems="10"
         android:hint="Digite seu e-mail"
-        android:inputType="textPersonName"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLines="1"
+        android:maxLength="30"
         android:textColorHint="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"

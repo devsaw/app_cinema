@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.view.fragments
+package br.digitalhouse.app_cinema.fragments.canais.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.view.TelaAssistidosActivity
-import br.digitalhouse.app_cinema.view.TelaFavoritosActivity
-import br.digitalhouse.app_cinema.view.TelaParaAssistirActivity
+import br.digitalhouse.app_cinema.assistidos.view.TelaAssistidosActivity
+import br.digitalhouse.app_cinema.favoritos.view.TelaFavoritosActivity
+import br.digitalhouse.app_cinema.paraassistir.view.TelaParaAssistirActivity
 
 class CanaisFragment : Fragment(R.layout.fragment_canais) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

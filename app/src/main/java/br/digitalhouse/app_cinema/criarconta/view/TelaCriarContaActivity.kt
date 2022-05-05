@@ -1,12 +1,12 @@
-package br.digitalhouse.app_cinema.view
+package br.digitalhouse.app_cinema.criarconta.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.digitalhouse.app_cinema.R
 
-class TelaRedefinirSenhaActivity : AppCompatActivity() {
+class TelaCriarContaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_redefinir_senha)
+        setContentView(R.layout.activity_tela_criar_conta)
     }
 }

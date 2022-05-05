@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img12"
-    tools:context=".view.TelaRedefinirSenhaActivity">
+    tools:context=".redefinirsenha.view.TelaRedefinirSenhaActivity">
 
     <ImageView
         android:id="@+id/logoRedefinirSenha"
@@ -38,7 +38,9 @@
         android:layout_height="67dp"
         android:layout_marginTop="296dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLines="1"
+        android:maxLength="16"
         android:hint="Digite sua senha atual"
         android:textColorHint="@color/white"
         android:textSize="20dp"
@@ -55,7 +57,9 @@
         android:ems="10"
         android:hint="Digite sua nova senha"
         android:textColorHint="@color/white"
-        android:inputType="textPersonName"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLines="1"
+        android:maxLength="16"
         android:textColor="@color/redt"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"

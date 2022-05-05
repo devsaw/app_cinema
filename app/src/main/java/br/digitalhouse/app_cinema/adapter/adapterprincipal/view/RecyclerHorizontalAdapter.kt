@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.adapter
+package br.digitalhouse.app_cinema.adapter.adapterprincipal.view
 
 import android.view.LayoutInflater
 import android.view.View

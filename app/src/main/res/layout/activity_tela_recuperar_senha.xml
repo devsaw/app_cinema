@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img13"
-    tools:context=".view.TelaRecuperarSenhaActivity">
+    tools:context=".recuperarsenha.view.TelaRecuperarSenhaActivity">
 
     <ImageView
         android:id="@+id/logoLogin"
@@ -39,7 +39,9 @@
         android:layout_marginTop="424dp"
         android:ems="10"
         android:hint="Digite seu e-mail"
-        android:inputType="textPersonName"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLines="1"
+        android:maxLength="30"
         android:textColor="@color/redt"
         android:textColorHint="@color/white"
         android:textSize="20dp"
@@ -52,11 +54,10 @@
         android:id="@+id/btnRecuperarSenha"
         android:layout_width="307dp"
         android:layout_height="108dp"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="504dp"
         android:background="@null"
         android:src="@drawable/recuperarsenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

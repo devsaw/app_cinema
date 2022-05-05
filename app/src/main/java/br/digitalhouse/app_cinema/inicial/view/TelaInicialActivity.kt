@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.view
+package br.digitalhouse.app_cinema.inicial.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
