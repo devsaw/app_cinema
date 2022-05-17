@@ -2,9 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/slots"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/gray">
+    android:layout_height="170dp"
+    app:cardCornerRadius="2dp"
+    android:background="@color/gray"
+    android:elevation="3dp">
 
 
     <TextView
@@ -16,30 +19,12 @@
         android:fontFamily="@font/nosifer"
         android:text="Lançamentos"
         android:textColor="@color/redt"
-        android:textSize="14dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:paddingHorizontal="8dp"
-        android:paddingBottom="1dp"
-        android:paddingTop="1dp"
-        android:clipToPadding="false"
-        tools:listitem="@layout/recycler_item_filmes"
-        tools:itemCount="1"
-        android:layout_below="@+id/textViewLancamentos"
-        android:background="@color/gray"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLancamentos" />
+        tools:ignore="MissingConstraints"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

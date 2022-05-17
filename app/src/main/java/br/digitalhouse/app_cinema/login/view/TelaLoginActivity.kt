@@ -1,5 +1,6 @@
 package br.digitalhouse.app_cinema.login.view
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -9,20 +10,25 @@ import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.login.viewmodel.LoginViewModel
 
 class TelaLoginActivity : AppCompatActivity() {
+    private lateinit var loginViewModel: LoginViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_login)
-        botaoLogar()
+        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        botaoLogar(this)
+        observer()
     }
 
-    fun botaoLogar(){
-        var textSenhaLogar = findViewById<EditText>(R.id.editTextSenha)
-        val senhaInformada = textSenhaLogar.text.toString()
-        var textEmailLogar = findViewById<EditText>(R.id.editTextUsuario)
-        val loginInformado = textEmailLogar.text.toString()
+    fun botaoLogar(context : Context){
+        var senha = findViewById<EditText>(R.id.editTextSenha).text.toString()
+        var login = findViewById<EditText>(R.id.editTextUsuario).text.toString()
         var btnLogar = findViewById<ImageButton>(R.id.btnLogarLogin)
-        var loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        btnLogar.setOnClickListener { loginViewModel.validaBotaoLogar("login", "senha") }
+        btnLogar.setOnClickListener { loginViewModel.logarUsuario(login, senha, context)}
+    }
+
+    private fun observer(){
+        loginViewModel.requestLoginLiveData.observe(this) { it }
     }
 
 }

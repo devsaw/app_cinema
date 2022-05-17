@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.adapter.adapterprincipal.view.RecyclerVerticalAdapter
+import br.digitalhouse.app_cinema.fragments.filmes.adapter.RecyclerHorizontalAdapter
+import br.digitalhouse.app_cinema.fragments.filmes.adapter.RecyclerVerticalAdapter
 
 class FilmesFragment : Fragment() {
 
     var recyclerVerticalAdapter: RecyclerVerticalAdapter? = null
+    var recyclerHorizontalAdapter: RecyclerHorizontalAdapter?= null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +28,9 @@ class FilmesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerVerticalAdapter = RecyclerVerticalAdapter()
-        view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = RecyclerVerticalAdapter()
+        view.findViewById<RecyclerView>(R.id.slots).adapter = RecyclerVerticalAdapter()
+        recyclerHorizontalAdapter = RecyclerHorizontalAdapter()
+        view.findViewById<RecyclerView>(R.id.card).adapter = RecyclerHorizontalAdapter()
 
     }
 }

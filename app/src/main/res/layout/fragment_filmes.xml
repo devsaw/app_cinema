@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,13 +16,12 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="1dp"
         android:background="@color/redt"
-        android:contentDescription="Pesquisar"
         android:focusable="true"
         android:iconifiedByDefault="false"
         android:importantForAccessibility="yes"
         android:orientation="horizontal"
         android:queryBackground="@android:color/transparent"
-        android:queryHint="searchButton"
+        android:queryHint="Pesquisar..."
         android:textColorHint="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -30,7 +30,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_vertical"
-        tools:listitem="@layout/recycler_view_horizontal"
+        tools:listitem="@layout/recycler_item_slots"
         tools:itemCount="3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

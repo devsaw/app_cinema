@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.adapter.adaptertablayout.view.TabLayoutAdapter
 import br.digitalhouse.app_cinema.fragments.canais.view.CanaisFragment
 import br.digitalhouse.app_cinema.fragments.conta.view.ContaFragment
 import br.digitalhouse.app_cinema.fragments.filmes.view.FilmesFragment
+import br.digitalhouse.app_cinema.principal.adapter.TabLayoutAdapter
 import com.google.android.material.tabs.TabLayout
 
 class TelaPrincipalActivity : AppCompatActivity() {
