@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img14"
+    tools:context=".ui.fragments.TelaLoginFragment">
+
+
+    <ImageView
+        android:id="@+id/logoLogin"
+        android:layout_width="262dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/essaqui" />
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="315dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/nosifer"
+        android:text="Cine Ex"
+        android:textColor="@color/redt"
+        android:textSize="55dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextUsuario"
+        android:layout_width="243dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="280dp"
+        android:ems="10"
+        android:hint="Digite seu e-mail"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSenha"
+        android:layout_width="243dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="348dp"
+        android:ems="10"
+        android:hint="Digite sua senha"
+        android:inputType="textShortMessage|textMultiLine"
+        android:maxLength="16"
+        android:maxLines="1"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnLogarLogin"
+        android:layout_width="307dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="416dp"
+        android:background="@null"
+        android:src="@drawable/logar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnEsqueciSenhaLogin"
+        android:layout_width="307dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="532dp"
+        android:background="@null"
+        android:src="@drawable/esquecisenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
