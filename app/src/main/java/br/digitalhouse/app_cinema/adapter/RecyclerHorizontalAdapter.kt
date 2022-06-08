@@ -33,3 +33,4 @@ class RecyclerHorizontalAdapter :
 
     }
 }
+//Teste
