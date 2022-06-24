@@ -8,34 +8,30 @@
     android:background="@color/gray"
     android:orientation="vertical">
 
-    <SearchView
-        android:id="@+id/pesquisar"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="1dp"
-        android:background="@color/redt"
-        android:focusable="true"
-        android:iconifiedByDefault="false"
-        android:importantForAccessibility="yes"
-        android:orientation="horizontal"
-        android:queryBackground="@android:color/transparent"
-        android:queryHint="Pesquisar..."
-        android:textColorHint="@android:color/black"
+    <TextView
+        android:id="@+id/textViewLancamentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/nosifer"
+        android:text="Filmes"
+        android:layout_gravity="center"
+        android:textColor="@color/redt"
+        android:textSize="26dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_vertical"
         tools:listitem="@layout/recycler_item_slots"
-        tools:itemCount="3"
+        tools:itemCount="4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/slots"
     android:layout_width="match_parent"
-    android:layout_height="179dp"
+    android:layout_height="235dp"
     app:cardCornerRadius="2dp"
     android:background="@color/gray"
     android:elevation="3dp">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSlots"
@@ -17,28 +18,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingTop="@android:dimen/app_icon_size"
+        android:paddingTop="8dp"
         tools:itemCount="6"
-        tools:listitem="@layout/recycler_item_filmes"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_filmes"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:orientation="horizontal"/>
 
 
-    <TextView
-        android:id="@+id/textViewLancamentos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/nosifer"
-        android:text="Lançamentos"
-        android:textColor="@color/redt"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

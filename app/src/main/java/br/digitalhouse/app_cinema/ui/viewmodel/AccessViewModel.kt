@@ -1,12 +1,10 @@
-package br.digitalhouse.app_cinema.viewmodel
+package br.digitalhouse.app_cinema.ui.viewmodel
 
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import br.digitalhouse.app_cinema.model.UsuarioDataClass
-import kotlinx.coroutines.launch
+import br.digitalhouse.app_cinema.ui.model.UsuarioDataClass
 
 class AccessViewModel() : ViewModel() {
 

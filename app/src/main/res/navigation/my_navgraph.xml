@@ -25,64 +25,22 @@
             android:id="@+id/action_telaLoginFragment_to_telaRecuperarSenhaFragment"
             app:destination="@id/telaRecuperarSenhaFragment" />
         <action
-            android:id="@+id/action_telaLoginFragment_to_telaPrincipalActivity"
-            app:destination="@id/telaPrincipalActivity" />
+            android:id="@+id/action_telaLoginFragment_to_telaPrincipalFragment"
+            app:destination="@id/telaPrincipalFragment" />
     </fragment>
     <fragment
         android:id="@+id/telaCriarContaFragment"
         android:name="br.digitalhouse.app_cinema.ui.fragments.TelaCriarContaFragment"
         android:label="fragment_tela_criar_conta"
         tools:layout="@layout/fragment_tela_criar_conta" />
-    <activity
-        android:id="@+id/telaPrincipalActivity"
-        android:name="br.digitalhouse.app_cinema.ui.TelaPrincipalActivity"
-        android:label="activity_tela_principal"
-        tools:layout="@layout/activity_tela_principal" />
     <fragment
         android:id="@+id/telaRecuperarSenhaFragment"
         android:name="br.digitalhouse.app_cinema.ui.fragments.TelaRecuperarSenhaFragment"
         android:label="fragment_tela_recuperar_senha"
         tools:layout="@layout/fragment_tela_recuperar_senha" />
     <fragment
-        android:id="@+id/canaisFragment"
-        android:name="br.digitalhouse.app_cinema.ui.fragments.CanaisFragment"
-        android:label="CanaisFragment" >
-        <action
-            android:id="@+id/action_canaisFragment_to_telaFavoritosFragment"
-            app:destination="@id/telaFavoritosFragment" />
-        <action
-            android:id="@+id/action_canaisFragment_to_telaParaAssistirFragment"
-            app:destination="@id/telaParaAssistirFragment" />
-        <action
-            android:id="@+id/action_canaisFragment_to_telaAssistidosFragment"
-            app:destination="@id/telaAssistidosFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/telaAssistidosFragment"
-        android:name="br.digitalhouse.app_cinema.ui.fragments.TelaAssistidosFragment"
-        android:label="fragment_tela_assistidos"
-        tools:layout="@layout/fragment_tela_assistidos" />
-    <fragment
-        android:id="@+id/telaFavoritosFragment"
-        android:name="br.digitalhouse.app_cinema.ui.fragments.TelaFavoritosFragment"
-        android:label="fragment_tela_favoritos"
-        tools:layout="@layout/fragment_tela_favoritos" />
-    <fragment
-        android:id="@+id/telaParaAssistirFragment"
-        android:name="br.digitalhouse.app_cinema.ui.fragments.TelaParaAssistirFragment"
-        android:label="fragment_tela_para_assistir"
-        tools:layout="@layout/fragment_tela_para_assistir" />
-    <fragment
-        android:id="@+id/contaFragment"
-        android:name="br.digitalhouse.app_cinema.ui.fragments.ContaFragment"
-        android:label="ContaFragment" >
-        <action
-            android:id="@+id/action_contaFragment_to_telaRedefinirSenhaFragment"
-            app:destination="@id/telaRedefinirSenhaFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/telaRedefinirSenhaFragment"
-        android:name="br.digitalhouse.app_cinema.ui.fragments.TelaRedefinirSenhaFragment"
-        android:label="fragment_tela_redefinir_senha"
-        tools:layout="@layout/fragment_tela_redefinir_senha" />
+        android:id="@+id/telaPrincipalFragment"
+        android:name="br.digitalhouse.app_cinema.ui.fragments.TelaPrincipalFragment"
+        android:label="fragment_tela_principal"
+        tools:layout="@layout/fragment_tela_principal" />
 </navigation>
