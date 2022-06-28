@@ -22,6 +22,9 @@ import br.digitalhouse.app_cinema.R
 
 class ContaFragment : Fragment() {
     private lateinit var botaoRedefinir: Button
+    private lateinit var botaoTirar: Button
+    private lateinit var botaoAbrir: Button
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,9 +37,9 @@ class ContaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         botaoRedefinir = view.findViewById(R.id.btnContaRedefinirSenha)
-        botaoTirar()
-        botaoAbrir()
-        botaoRedefinir()
+        botaoTirar = view.findViewById(R.id.btnTirar)
+        botaoAbrir = view.findViewById(R.id.btnAbrir)
+        clickListener()
     }
 
     @RequiresApi(Build.VERSION_CODES.S)
@@ -84,15 +87,16 @@ class ContaFragment : Fragment() {
         }
     }
 
-    fun botaoAbrir() {
-        val buttonAbrir = view?.findViewById<Button>(R.id.btnAbrir)
-        buttonAbrir?.setOnClickListener { validaAbrir() }
+    fun clickListener(){
+        botaoAbrir.setOnClickListener { validaAbrir() }
+        botaoTirar.setOnClickListener { validaTirar() }
+        botaoRedefinir.setOnClickListener {
+            val intentRedefinir = Intent(requireContext(), TelaRedefinirSenhaFragment::class.java)
+            startActivity(intentRedefinir)
+        }
+
     }
 
-    fun botaoTirar() {
-        val buttonTirar = view?.findViewById<Button>(R.id.btnTirar)
-        buttonTirar?.setOnClickListener { validaTirar() }
-    }
 
     fun validaTirar() {
         if (ContextCompat.checkSelfPermission(
@@ -126,13 +130,6 @@ class ContaFragment : Fragment() {
             var intent =
                 Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(intent, 2)
-        }
-    }
-
-
-    fun botaoRedefinir() {
-        botaoRedefinir.setOnClickListener {
-            findNavController().navigate(R.id.action_contaFragment_to_telaRedefinirSenhaFragment)
         }
     }
 

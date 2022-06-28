@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.model
+package br.digitalhouse.app_cinema.ui.model
 
 data class UsuarioDataClass(
     var login: String,

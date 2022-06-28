@@ -1,4 +1,4 @@
-package br.digitalhouse.app_cinema.`interface`
+package br.digitalhouse.app_cinema.ui.interfaces
 
 
 interface MessageInterface {

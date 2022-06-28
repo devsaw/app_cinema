@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.`interface`.MessageInterface
-import br.digitalhouse.app_cinema.viewmodel.AccessViewModel
+import br.digitalhouse.app_cinema.ui.interfaces.MessageInterface
+import br.digitalhouse.app_cinema.ui.viewmodel.AccessViewModel
 
 class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterface {
     private lateinit var accessViewModel: AccessViewModel
@@ -27,12 +27,16 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewInit(view)
+        setupListener()
+        observer()
+    }
+
+    private fun viewInit(view: View) {
         senhaTxt = view.findViewById(R.id.editTextSenha)
         loginTxt = view.findViewById(R.id.editTextUsuario)
         btnLogar = view.findViewById(R.id.btnLogarLogin)
         btnEsqueci = view.findViewById(R.id.btnEsqueciSenhaLogin)
-        setupListener()
-        observer()
     }
 
     fun setupListener() {
@@ -62,7 +66,7 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
     }
 
     private fun navigatioToPrincipal() {
-        findNavController().navigate(R.id.action_telaLoginFragment_to_telaPrincipalActivity)
+        findNavController().navigate(R.id.action_telaLoginFragment_to_telaPrincipalFragment)
         showMessage("Logado!")
     }
 
