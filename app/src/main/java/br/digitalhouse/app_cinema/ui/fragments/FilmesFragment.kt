@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class FilmesFragment : Fragment() {
 
-    private var recyclerVerticalAdapter: RecyclerVerticalAdapter? = null
+    lateinit var recyclerVerticalAdapter: RecyclerVerticalAdapter
     private val moviesViewModel: MoviesViewModel by viewModels()
 
     override fun onCreateView(
@@ -37,9 +37,7 @@ class FilmesFragment : Fragment() {
     private fun requestPopulares() {
         lifecycleScope.launch {
             val feed = moviesViewModel.fetchPopular()
-            activity?.runOnUiThread {
-                recyclerVerticalAdapter?.add(listOf(feed))
-            }
-        }.start()
+                recyclerVerticalAdapter.add(listOf(feed))
+        }
     }
 }

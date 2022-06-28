@@ -28,7 +28,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_vertical"
-        tools:listitem="@layout/recycler_item_slots"
+        tools:listitem="@layout/item_slots"
         tools:itemCount="4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

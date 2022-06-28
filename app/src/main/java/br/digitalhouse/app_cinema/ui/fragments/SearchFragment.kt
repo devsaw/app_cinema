@@ -15,7 +15,9 @@ import br.digitalhouse.app_cinema.ui.viewmodel.MoviesViewModel
 import kotlinx.coroutines.launch
 
 class SearchFragment : Fragment() {
-    private var rvSearchView: RecyclerSearchViewAdapter? = null
+
+    lateinit var searchView : SearchView
+    lateinit var rvSearchView: RecyclerSearchViewAdapter
     private val moviesViewModel: MoviesViewModel by viewModels()
 
     override fun onCreateView(
@@ -29,6 +31,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        searchView = view.findViewById(R.id.pesquisar)
         rvSearchView = RecyclerSearchViewAdapter()
         view.findViewById<RecyclerView>(R.id.recyclerViewSearch).adapter = rvSearchView
         requestSearch()
@@ -36,8 +39,8 @@ class SearchFragment : Fragment() {
 
     private fun requestSearch() {
         lifecycleScope.launch {
-            val search = moviesViewModel.fetchMovies()
-            view?.findViewById<SearchView>(R.id.pesquisar)
-        }.start()
+            val filmes = moviesViewModel.fetchMovies()
+
+        }
     }
 }

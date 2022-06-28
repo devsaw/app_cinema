@@ -3,12 +3,10 @@ package br.digitalhouse.app_cinema.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.data.ImageDownloader
 import br.digitalhouse.app_cinema.data.dto.Popular
 import com.squareup.picasso.Picasso
 
@@ -39,9 +37,7 @@ class RecyclerHorizontalAdapter(private val populares: List<Popular>) :
 
         private fun getImageUrl(path:String) :String{
              val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
-            return "BASE_IMAGE_URL$path"
-
+            return "$BASE_IMAGE_URL$path"
         }
-
     }
 }

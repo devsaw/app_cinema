@@ -7,14 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.dto.Feed
-import br.digitalhouse.app_cinema.data.dto.Popular
 
 
 class RecyclerVerticalAdapter(private val listaFeed: MutableList<Feed> = mutableListOf()) :
     RecyclerView.Adapter<RecyclerVerticalAdapter.VerticalHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VerticalHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.recycler_item_slots, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_slots, parent, false)
     )
 
     override fun onBindViewHolder(holder: VerticalHolder, position: Int) = holder.bind(listaFeed[position])

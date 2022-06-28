@@ -23,20 +23,21 @@ class TelaPrincipalFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        var adapterTab = TabLayoutAdapter(parentFragmentManager)
-        adapterTab.add(FilmesFragment(), "Filmes")
-        adapterTab.add(SearchFragment(), "Buscar")
-        adapterTab.add(CanaisFragment(), "Canais")
-        adapterTab.add(ContaFragment(), "Conta")
-
-
-        var pager = view.findViewById<ViewPager>(R.id.viewPager)
-        pager.adapter = adapterTab
-
-        var tabLayout = view.findViewById<TabLayout>(R.id.myTabLayout)
-        tabLayout.setupWithViewPager(pager)
+       initView()
     }
 
 
+    private fun initView(){
+        var adapterTab = TabLayoutAdapter(parentFragmentManager)
+        adapterTab.add(FilmesFragment(), "Filmes")
+        adapterTab.add(SearchFragment(), "Buscar")
+        adapterTab.add(FavoritosFragment(), "Favoritos")
+        adapterTab.add(ContaFragment(), "Conta")
+
+        var pager = view?.findViewById<ViewPager>(R.id.viewPager)
+        pager?.adapter = adapterTab
+
+        var tabLayout = view?.findViewById<TabLayout>(R.id.myTabLayout)
+        tabLayout?.setupWithViewPager(pager)
+    }
 }
