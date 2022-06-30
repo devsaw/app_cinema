@@ -17,10 +17,10 @@ App Cinema feito para gestão de filmes assistidos, para assistir e com opção 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Tarefa 1 - Sistema de login
-- [ ] Tarefa 2 - Recuperação de senha
-- [ ] Tarefa 3 - Tela Principal/Filmes
+- [ ] Tarefa 2 - Autenticação com Firebase
+- [x] Tarefa 3 - Tela Principal/Filmes
 - [ ] Tarefa 4 - Tela de Usuário
-- [ ] Tarefa 5 - Canais de gerenciamento
+- [ ] Tarefa 5 - Canais de Favoritos
 
 ## 💻 Pré-requisitos
 
