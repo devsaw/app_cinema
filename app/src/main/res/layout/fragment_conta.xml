@@ -49,30 +49,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/editTextConta"
-        android:layout_width="288dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="420dp"
-        android:ems="10"
-        android:hint="Escreva palavras sobre você!"
-        android:inputType="textShortMessage|textMultiLine"
-        android:maxLines="2"
-        android:maxLength="40"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnContaRedefinirSenha"
+        android:id="@+id/btnCompartilhar"
         android:layout_width="208dp"
         android:layout_height="62dp"
-        android:layout_marginTop="536dp"
+        android:layout_marginTop="528dp"
         android:backgroundTint="@color/black"
         android:fontFamily="@font/nosifer"
-        android:text="Redefinir Senha"
+        android:text="Compartilhar"
         android:textColor="@color/redt"
         android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,16 +66,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewConta"
-        android:layout_width="108dp"
-        android:layout_height="31dp"
-        android:text="BIO:"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:id="@+id/textSms"
+        android:layout_width="332dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/nosifer"
+        android:text="Olá, eu estou usando o aplicativo Cine EX para gerenciar meus filmes, venha você também!"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewConta" />
+
+    <TextView
+        android:id="@+id/textViewCompartilhe"
+        android:layout_width="291dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="101dp"
+        android:text="Compartilhe com seus amigos:"
+        android:textAlignment="center"
+        android:textColor="@color/redt"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewConta"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

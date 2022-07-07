@@ -60,8 +60,10 @@ dependencies {
     //Serialized name
     def square_version = "2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:$square_version"
+
     //Efetuar requests e responses Json
     implementation "com.squareup.retrofit2:retrofit:$square_version"
+
     //okhttp3
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
     implementation "com.squareup.okhttp3:okhttp:4.9.3"

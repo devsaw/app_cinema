@@ -7,8 +7,8 @@ import kotlinx.coroutines.withContext
 class MoviesRepository {
     private val api = filmesApi
 
-    suspend fun fetchPopular(): Feed = withContext(Dispatchers.IO){
-        api.fetchPopular()
+    suspend fun fetchPopular(page : Int): Feed = withContext(Dispatchers.IO){
+        api.fetchPopular(page)
     }
 
     suspend fun fetchMovies(): Names = withContext(Dispatchers.IO){

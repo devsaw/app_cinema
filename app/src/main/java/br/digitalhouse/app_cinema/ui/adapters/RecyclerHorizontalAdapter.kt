@@ -10,7 +10,10 @@ import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.dto.Popular
 import com.squareup.picasso.Picasso
 
-class RecyclerHorizontalAdapter(private val populares: List<Popular>) :
+class RecyclerHorizontalAdapter(
+    private val populares: List<Popular>,
+    private val onItemClickedListener: (title: String, overview: String, filmes: String) -> Unit
+) :
     RecyclerView.Adapter<RecyclerHorizontalAdapter.HorizontalHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = HorizontalHolder(
@@ -28,15 +31,22 @@ class RecyclerHorizontalAdapter(private val populares: List<Popular>) :
     inner class HorizontalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imagem = itemView.findViewById<ImageView>(R.id.film_card)
         private val titulos = itemView.findViewById<TextView>(R.id.titulos)
+
+
+
         fun bind(popular: Popular) {
+            val imageURL = getImageUrl(popular.filmes)
+            itemView.rootView.setOnClickListener{
+                onItemClickedListener.invoke(popular.title, popular.overview, imageURL)
+            }
             Picasso.get()
-                .load(getImageUrl(popular.filmes))
+                .load(imageURL)
                 .into(imagem)
             titulos.text = popular.title
         }
 
-        private fun getImageUrl(path:String) :String{
-             val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
+        private fun getImageUrl(path: String): String {
+            val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
             return "$BASE_IMAGE_URL$path"
         }
     }

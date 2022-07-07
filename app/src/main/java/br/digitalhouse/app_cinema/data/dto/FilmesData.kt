@@ -12,6 +12,8 @@ data class Popular(
 
     @SerializedName("poster_path")
     val filmes: String,
+
+    val overview: String,
 )
 
 

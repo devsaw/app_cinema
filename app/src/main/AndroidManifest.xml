@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_cinema">
         <activity
+            android:name=".ui.activities.DetalhesActivity"
+            android:exported="false"/>
+        <activity
             android:name=".ui.activities.MainActivity"
             android:exported="true">
             <intent-filter>
