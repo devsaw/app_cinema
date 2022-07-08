@@ -24,6 +24,10 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Tarefa 6 - Tela de Usuário
 - [ ] Tarefa 7 - Testes
 
+## 🔨 Ferramentas
+Para esse projeto estamos utilizando Arquitetura MVVM, persistência de dados com Room, autenticação com Firebase, consumo de APIs.
+Retrofit, Jetpack, Coroutines, Navigation, Ktx, Picasso.
+
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
