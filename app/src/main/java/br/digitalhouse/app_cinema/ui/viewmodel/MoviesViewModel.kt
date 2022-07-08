@@ -11,6 +11,5 @@ class MoviesViewModel: ViewModel() {
 
     suspend fun fetchPopular(page : Int = 1): Feed = moviesRepository.fetchPopular(page)
 
-    suspend fun fetchMovies(): Names = moviesRepository.fetchMovies()
-
+    suspend fun fetchMovies(search : String): Names = moviesRepository.fetchMovies(search)
 }

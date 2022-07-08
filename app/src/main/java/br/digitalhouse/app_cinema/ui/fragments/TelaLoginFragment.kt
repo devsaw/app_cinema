@@ -77,6 +77,4 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
     private fun textIsBlank(login: String, senha: String): Boolean {
         return login.isBlank() || senha.isBlank()
     }
-
-
 }

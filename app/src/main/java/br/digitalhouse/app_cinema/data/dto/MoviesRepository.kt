@@ -11,8 +11,7 @@ class MoviesRepository {
         api.fetchPopular(page)
     }
 
-    suspend fun fetchMovies(): Names = withContext(Dispatchers.IO){
-        api.fetchMovies()
+    suspend fun fetchMovies(search : String): Names = withContext(Dispatchers.IO){
+        api.fetchMovies(search)
     }
-
 }

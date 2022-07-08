@@ -35,7 +35,7 @@ class RecyclerHorizontalAdapter(
 
 
         fun bind(popular: Popular) {
-            val imageURL = getImageUrl(popular.filmes)
+            val imageURL = getImageUrl(popular.movies)
             itemView.rootView.setOnClickListener{
                 onItemClickedListener.invoke(popular.title, popular.overview, imageURL)
             }
