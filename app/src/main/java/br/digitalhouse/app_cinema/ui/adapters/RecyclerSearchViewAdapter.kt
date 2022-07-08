@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.dto.Names
@@ -34,7 +36,10 @@ class RecyclerSearchViewAdapter(private val results: MutableList<Resultados> = m
     inner class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val foto: ImageView = itemView.findViewById(R.id.foto)
         private val nome: TextView = itemView.findViewById(R.id.nome)
+        private val rvSv: RecyclerView = itemView.findViewById(R.id.recyclerViewSearch)
         fun bind(result: Resultados) {
+            rvSv.layoutManager = LinearLayoutManager(itemView.context, RecyclerView.VERTICAL, false)
+            rvSv.adapter = RecyclerSearchViewAdapter(results)
             Picasso.get()
                 .load(getImageSearchUrl(result.pictures))
                 .into(foto)
