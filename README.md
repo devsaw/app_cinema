@@ -19,8 +19,10 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Tarefa 1 - Sistema de login
 - [ ] Tarefa 2 - Autenticação com Firebase
 - [x] Tarefa 3 - Tela Principal/Filmes
-- [ ] Tarefa 4 - Tela de Usuário
-- [ ] Tarefa 5 - Canais de Favoritos
+- [x] Tarefa 4 - Tela de Busca
+- [ ] Tarefa 5 - Tela Favoritos
+- [ ] Tarefa 6 - Tela de Usuário
+- [ ] Tarefa 7 - Testes
 
 ## 💻 Pré-requisitos
 
