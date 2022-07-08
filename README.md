@@ -8,7 +8,7 @@
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/FqrTsTG/nova.jpg" alt="nova" border="0"></a>
 
-App Cinema feito para gestão de filmes assistidos, para assistir e com opção de favoritá-los.
+App Cinema feito para gestão de filmes, com opção de favoritá-los.
 
 ## 🔧 [Kotlin](https://kotlinlang.org/)
 
