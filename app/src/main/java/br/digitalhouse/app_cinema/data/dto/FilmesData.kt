@@ -11,18 +11,17 @@ data class Popular(
     val title: String,
 
     @SerializedName("poster_path")
-    val filmes: String,
+    val movies: String,
+
+    val overview: String,
 )
-
-
-
 
 data class Names(@SerializedName("results") val names: List<Resultados>)
 
 data class Resultados(
     @SerializedName("title")
-    val pesquisados: String,
+    val titleMovie: String,
 
     @SerializedName("poster_path")
-    val fotos: String,
+    val pictures: String,
 )

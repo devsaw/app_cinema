@@ -9,20 +9,23 @@ import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.dto.Feed
 
 
-class RecyclerVerticalAdapter(private val listaFeed: MutableList<Feed> = mutableListOf()) :
+class RecyclerVerticalAdapter(
+    private val listaFeed: MutableList<Feed> = mutableListOf(),
+    private val onItemClickedListener: (title: String, overview: String, filmes: String) -> Unit
+) :
     RecyclerView.Adapter<RecyclerVerticalAdapter.VerticalHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VerticalHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_slots, parent, false)
     )
 
-    override fun onBindViewHolder(holder: VerticalHolder, position: Int) = holder.bind(listaFeed[position])
+    override fun onBindViewHolder(holder: VerticalHolder, position: Int) =
+        holder.bind(listaFeed[position])
 
     override fun getItemCount(): Int = listaFeed.size
 
-    fun add(listagem: List<Feed>) {
-        this.listaFeed.clear()
-        this.listaFeed.addAll(listagem)
+    fun add(listagem: Feed) {
+        this.listaFeed.add(listagem)
         this.notifyDataSetChanged()
     }
 
@@ -32,7 +35,7 @@ class RecyclerVerticalAdapter(private val listaFeed: MutableList<Feed> = mutable
             recyclerView.layoutManager = LinearLayoutManager(
                 itemView.context, RecyclerView.HORIZONTAL, false
             )
-            recyclerView.adapter = RecyclerHorizontalAdapter(feed.populares)
+            recyclerView.adapter = RecyclerHorizontalAdapter(feed.populares, onItemClickedListener)
         }
     }
 }

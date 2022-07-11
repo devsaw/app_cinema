@@ -7,131 +7,122 @@ import android.graphics.ImageDecoder
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.ViewModelProvider
 import br.digitalhouse.app_cinema.R
+import br.digitalhouse.app_cinema.ui.viewmodel.ContaViewModel
 
-class ContaFragment : Fragment() {
-    private lateinit var botaoRedefinir: Button
-    private lateinit var botaoTirar: Button
-    private lateinit var botaoAbrir: Button
+class ContaFragment : Fragment(R.layout.fragment_conta) {
+    private lateinit var accViewModel: ContaViewModel
+    private lateinit var imageView: ImageView
+    private lateinit var btnShare: Button
+    private lateinit var btnTakePic: Button
+    private lateinit var btnOpenStore: Button
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_conta, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        accViewModel = ViewModelProvider(this).get(ContaViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        botaoRedefinir = view.findViewById(R.id.btnContaRedefinirSenha)
-        botaoTirar = view.findViewById(R.id.btnTirar)
-        botaoAbrir = view.findViewById(R.id.btnAbrir)
+        initView()
         clickListener()
+        observerSetup()
+    }
+
+    private fun initView() {
+        btnShare = requireView().findViewById(R.id.btnCompartilhar)
+        btnTakePic = requireView().findViewById(R.id.btnTirar)
+        btnOpenStore = requireView().findViewById(R.id.btnAbrir)
+        imageView = requireView().findViewById(R.id.imageViewConta)
     }
 
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1) {
+        if (requestCode == accViewModel.IMAGE_CAPTURE_CODE) {
             val foto = data?.getParcelableExtra<Bitmap>("data")
-            var imageView = view?.findViewById<ImageView>(R.id.imageViewConta)
-            imageView?.setImageBitmap(foto)
 
-            var extras = data?.extras
-            var img = extras!!.get("data")
-            imageView?.setImageBitmap(img as Bitmap)
-
+            imageView.setImageBitmap(foto)
+            val extras = data?.extras
+            val img = extras!!.get("data")
+            imageView.setImageBitmap(img as Bitmap)
         }
 
-        if (requestCode == 2) {
+        if (requestCode == accViewModel.IMAGE_STORAGE_CODE) {
             val source = ImageDecoder.createSource(requireContext().contentResolver, data?.data!!)
             val bitmap = ImageDecoder.decodeBitmap(source)
-            var imageView = view?.findViewById<ImageView>(R.id.imageViewConta)
-            imageView?.setImageBitmap(bitmap)
+            imageView.setImageBitmap(bitmap)
         }
     }
-
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == 1) {
+        onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == accViewModel.IMAGE_CAPTURE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                var intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(intent, 1)
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(intent, accViewModel.IMAGE_CAPTURE_CODE)
             }
         }
 
-        if (requestCode == 2) {
+        if (requestCode == accViewModel.IMAGE_STORAGE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                var intent =
+                val intent =
                     Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-                startActivityForResult(intent, 2)
+                startActivityForResult(intent, accViewModel.IMAGE_STORAGE_CODE)
             }
         }
     }
 
-    fun clickListener(){
-        botaoAbrir.setOnClickListener { validaAbrir() }
-        botaoTirar.setOnClickListener { validaTirar() }
-        botaoRedefinir.setOnClickListener {
-            val intentRedefinir = Intent(requireContext(), TelaRedefinirSenhaFragment::class.java)
-            startActivity(intentRedefinir)
-        }
+    private fun clickListener() {
+        btnOpenStore.setOnClickListener { accViewModel.permissionOpenStorage() }
 
-    }
+        btnTakePic.setOnClickListener { accViewModel.permissionTakeAPicture() }
 
-
-    fun validaTirar() {
-        if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                android.Manifest.permission.CAMERA
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this.requireActivity(),
-                arrayOf(android.Manifest.permission.CAMERA),
-                1
+        btnShare.setOnClickListener {
+            val intentShared = Intent(Intent.ACTION_SEND)
+            intentShared.type = "text/plain"
+            intentShared.putExtra(
+                Intent.EXTRA_TEXT,
+                "Olá, eu estou usando o aplicativo Cine EX para gerenciar meus filmes, venha você também!"
             )
-        } else {
-            var intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(intent, 1)
+            startActivity(intentShared)
         }
     }
 
+    private fun observerSetup() {
+        accViewModel.takeAPicLiveData.observe(viewLifecycleOwner) { status ->
+            when (status) {
+                true -> openCam()
+                false -> Log.i("TIRAR_FOTO", "Ação cancelada")
+            }
+        }
 
-    fun validaAbrir() {
-        if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                android.Manifest.permission.READ_EXTERNAL_STORAGE
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this.requireActivity(),
-                arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 2
-            )
-        } else {
-            var intent =
-                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(intent, 2)
+        accViewModel.findPicLiveData.observe(viewLifecycleOwner) { status ->
+            when (status) {
+                true -> openStorage()
+                false -> Log.i("ESCOLHER_FOTO", "Ação cancelada")
+            }
         }
     }
 
+    private fun openCam() {
+        val intentCapture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(intentCapture, accViewModel.IMAGE_CAPTURE_CODE)
+    }
 
+    private fun openStorage() {
+        val intentStorage = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intentStorage, accViewModel.IMAGE_STORAGE_CODE)
+    }
 }
