@@ -23,7 +23,8 @@ class FilmesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_filmes, container, false)
+        return inflater.inflate(R.layout.fragment_filmes,
+            container, false)
 
     }
 
