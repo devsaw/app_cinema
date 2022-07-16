@@ -18,7 +18,6 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
     private lateinit var loginTxt: EditText
     private lateinit var senhaTxt: EditText
     private lateinit var btnLogar: ImageButton
-    private lateinit var btnEsqueci: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +35,6 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
         senhaTxt = view.findViewById(R.id.editTextSenha)
         loginTxt = view.findViewById(R.id.editTextUsuario)
         btnLogar = view.findViewById(R.id.btnLogarLogin)
-        btnEsqueci = view.findViewById(R.id.btnEsqueciSenhaLogin)
     }
 
     fun setupListener() {
@@ -49,10 +47,6 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
                accessViewModel.makeLogin(txtLogin, txtSenha)
 
             }
-        }
-
-        btnEsqueci.setOnClickListener {
-            findNavController().navigate(R.id.action_telaLoginFragment_to_telaRecuperarSenhaFragment)
         }
     }
 

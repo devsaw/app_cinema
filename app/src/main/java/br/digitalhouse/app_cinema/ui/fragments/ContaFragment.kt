@@ -11,29 +11,30 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import br.digitalhouse.app_cinema.R
-import br.digitalhouse.app_cinema.ui.viewmodel.ContaViewModel
+import br.digitalhouse.app_cinema.ui.interfaces.MessageInterface
+import com.squareup.picasso.MemoryPolicy
+import com.squareup.picasso.NetworkPolicy
+import com.squareup.picasso.Picasso
 
-class ContaFragment : Fragment(R.layout.fragment_conta) {
-    private lateinit var accViewModel: ContaViewModel
+class ContaFragment : Fragment(R.layout.fragment_conta), MessageInterface {
     private lateinit var imageView: ImageView
     private lateinit var btnShare: Button
     private lateinit var btnTakePic: Button
     private lateinit var btnOpenStore: Button
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        accViewModel = ViewModelProvider(this).get(ContaViewModel::class.java)
-    }
+    private var resultBitMap: Bitmap? = null
+    private val IMAGE_CAPTURE_CODE = 1
+    private val IMAGE_STORAGE_CODE = 2
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
         clickListener()
-        observerSetup()
     }
 
     private fun initView() {
@@ -46,19 +47,20 @@ class ContaFragment : Fragment(R.layout.fragment_conta) {
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == accViewModel.IMAGE_CAPTURE_CODE) {
+        if (requestCode == IMAGE_CAPTURE_CODE) {
             val foto = data?.getParcelableExtra<Bitmap>("data")
-
             imageView.setImageBitmap(foto)
             val extras = data?.extras
-            val img = extras!!.get("data")
-            imageView.setImageBitmap(img as Bitmap)
+            val img = extras!!.get("data") as Bitmap
+            imageView.setImageBitmap(img)
+            resultBitMap = img
         }
 
-        if (requestCode == accViewModel.IMAGE_STORAGE_CODE) {
+        if (requestCode == IMAGE_STORAGE_CODE) {
             val source = ImageDecoder.createSource(requireContext().contentResolver, data?.data!!)
             val bitmap = ImageDecoder.decodeBitmap(source)
             imageView.setImageBitmap(bitmap)
+            resultBitMap = bitmap
         }
     }
 
@@ -68,61 +70,74 @@ class ContaFragment : Fragment(R.layout.fragment_conta) {
         grantResults: IntArray
     ) {
         onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == accViewModel.IMAGE_CAPTURE_CODE) {
+        if (requestCode == IMAGE_CAPTURE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(intent, accViewModel.IMAGE_CAPTURE_CODE)
+                startActivityForResult(intent, IMAGE_CAPTURE_CODE)
             }
         }
 
-        if (requestCode == accViewModel.IMAGE_STORAGE_CODE) {
+        if (requestCode == IMAGE_STORAGE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 val intent =
                     Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-                startActivityForResult(intent, accViewModel.IMAGE_STORAGE_CODE)
+                startActivityForResult(intent, IMAGE_STORAGE_CODE)
             }
         }
+    }
+
+    fun permissionOpenStorage() {
+        if (ContextCompat.checkSelfPermission(
+                requireContext(),
+                android.Manifest.permission.READ_EXTERNAL_STORAGE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), IMAGE_STORAGE_CODE
+            )
+        } else {
+            val intentStorage =
+                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(intentStorage, IMAGE_STORAGE_CODE)
+        }
+    }
+
+    fun permissionTakeAPicture() {
+        if (ContextCompat.checkSelfPermission(
+                requireContext(),
+                android.Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(android.Manifest.permission.CAMERA), IMAGE_CAPTURE_CODE
+            )
+        } else {
+            val intentCapture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(intentCapture, IMAGE_CAPTURE_CODE)
+        }
+    }
+
+
+    private fun sharedInfo() {
+        val shareIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, "Olá, eu estou usando o aplicativo Cine EX para gerenciar meus filmes, venha você também!")
+        }
+        startActivity(shareIntent)
     }
 
     private fun clickListener() {
-        btnOpenStore.setOnClickListener { accViewModel.permissionOpenStorage() }
+        btnOpenStore.setOnClickListener { permissionOpenStorage() }
 
-        btnTakePic.setOnClickListener { accViewModel.permissionTakeAPicture() }
+        btnTakePic.setOnClickListener { permissionTakeAPicture() }
 
-        btnShare.setOnClickListener {
-            val intentShared = Intent(Intent.ACTION_SEND)
-            intentShared.type = "text/plain"
-            intentShared.putExtra(
-                Intent.EXTRA_TEXT,
-                "Olá, eu estou usando o aplicativo Cine EX para gerenciar meus filmes, venha você também!"
-            )
-            startActivity(intentShared)
-        }
+        btnShare.setOnClickListener { sharedInfo() }
     }
 
-    private fun observerSetup() {
-        accViewModel.takeAPicLiveData.observe(viewLifecycleOwner) { status ->
-            when (status) {
-                true -> openCam()
-                false -> Log.i("TIRAR_FOTO", "Ação cancelada")
-            }
-        }
-
-        accViewModel.findPicLiveData.observe(viewLifecycleOwner) { status ->
-            when (status) {
-                true -> openStorage()
-                false -> Log.i("ESCOLHER_FOTO", "Ação cancelada")
-            }
-        }
-    }
-
-    private fun openCam() {
-        val intentCapture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intentCapture, accViewModel.IMAGE_CAPTURE_CODE)
-    }
-
-    private fun openStorage() {
-        val intentStorage = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(intentStorage, accViewModel.IMAGE_STORAGE_CODE)
+    override fun showMessage(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 }

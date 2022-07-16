@@ -76,15 +76,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btnEsqueciSenhaLogin"
-        android:layout_width="307dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="532dp"
-        android:background="@null"
-        android:src="@drawable/esquecisenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

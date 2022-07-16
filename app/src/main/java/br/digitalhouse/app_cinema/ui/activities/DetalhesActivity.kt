@@ -16,7 +16,7 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         startView()
-        getInfo()
+        getInfoMovies()
     }
 
     private fun startView() {
@@ -25,7 +25,7 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
         image = findViewById(R.id.imageDetail)
     }
 
-    private fun getInfo() {
+    private fun getInfoMovies() {
         val extra = intent.extras!!
         val nameMovie = extra.getString("title")
         val descriptionMovie = extra.getString("overview")
