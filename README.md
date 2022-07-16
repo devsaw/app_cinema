@@ -21,7 +21,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Tarefa 3 - Tela Principal/Filmes
 - [x] Tarefa 4 - Tela de Busca
 - [ ] Tarefa 5 - Tela Favoritos
-- [ ] Tarefa 6 - Tela de Usuário
+- [x] Tarefa 6 - Tela de Usuário
 - [ ] Tarefa 7 - Testes
 
 ## 🔨 Ferramentas
