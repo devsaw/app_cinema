@@ -7,7 +7,10 @@
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
 <a href="https://ibb.co/SVTwKGw"><img src="https://i.ibb.co/GCwQVNQ/tela-Inicial.jpg" alt="nova" border="0"></a>
+<a href="https://ibb.co/7kknPQt"><img src="https://i.ibb.co/Z22B5Sz/tela-Filmes.jpg" alt="nova" border="0"></a>
+<a href="https://ibb.co/SVTwKGw"><img src="https://i.ibb.co/GCwQVNQ/tela-Inicial.jpg" alt="nova" border="0"></a>
 
+  
 App Cinema feito para gestão de filmes, com opção de favoritá-los.
 
 ## 🔧 [Kotlin](https://kotlinlang.org/)
