@@ -16,15 +16,15 @@ App Cinema feito para gestão de filmes, com opção de favoritá-los.
 
 O projeto está desenvolvido com as seguintes tarefas:
 
-- [x] Tarefa 1 - Sistema de login
-- [x] Tarefa 2 - Autenticação com Firebase
-- [x] Tarefa 3 - Tela Principal/Filmes
-- [x] Tarefa 4 - Tela de Busca
-- [x] Tarefa 5 - Tela Favoritos
-- [x] Tarefa 6 - Tela de Usuário
+- [x] Tarefa 1 - Sistema de login com Firebase
+- [x] Tarefa 2 - Tela Principal/Filmes com APIs (TMDB)
+- [x] Tarefa 3 - Tela de Busca com APIs (TMDB)
+- [x] Tarefa 4 - Tela de Favoritos com uso de Room
+- [x] Tarefa 5 - Tela de Usuário
+- [x] Tarefa 6 - Tela de Detalhes
 
 ## 🔨 Ferramentas
-Para esse projeto estamos utilizando Arquitetura MVVM, persistência de dados com Room, autenticação com Firebase, consumo de APIs.
+Para esse projeto estamos utilizando Arquitetura MVVM, persistência de dados com Room, autenticação com Firebase, consumo de APIs (TMDB).
 Retrofit, Jetpack, Coroutines, Navigation, Ktx, Picasso.
 
 ## 💻 Pré-requisitos
