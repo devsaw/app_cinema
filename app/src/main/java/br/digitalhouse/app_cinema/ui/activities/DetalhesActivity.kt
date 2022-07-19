@@ -4,12 +4,10 @@ package br.digitalhouse.app_cinema.ui.activities
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.database.Favoritos
-import br.digitalhouse.app_cinema.data.database.dao.FavoritosDAO
-import br.digitalhouse.app_cinema.data.database.dao.FavoritosRepository
 import br.digitalhouse.app_cinema.ui.viewmodel.FavoritosViewModel
 import com.squareup.picasso.Picasso
 
@@ -19,7 +17,7 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
     private lateinit var image: ImageView
     private lateinit var button: ImageView
     private val viewModel: FavoritosViewModel by lazy {
-        FavoritosViewModel( application)
+        FavoritosViewModel(application)
     }
 
     lateinit var nameMovie: String
@@ -28,19 +26,24 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-       // viewModel = ViewModelProvider(this)[FavoritosViewModel::class.java]
+        // viewModel = ViewModelProvider(this)[FavoritosViewModel::class.java]
         startView()
         getInfo()
         setupListeners()
 
     }
 
-    fun setupListeners(){
-        button.setOnClickListener{
-            var teste = Favoritos(0,nameMovie!!, imageMovie!! )
-            viewModel.salveFavorite(teste)
-           viewModel.getSalveFavorite()
+    fun setupListeners() {
+        button.setOnClickListener {
+            var addFavoritos = Favoritos(0, nameMovie!!, imageMovie!!)
+            viewModel.salveFavorite(addFavoritos)
+            viewModel.getSalveFavorite()
             Thread.sleep(1000)
+            Toast.makeText(
+                applicationContext,
+                "Filme adicionado aos favoritos com sucesso",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 

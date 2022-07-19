@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.database.Favoritos
@@ -15,7 +16,8 @@ class RecyclerFavoritosAdapter(
     RecyclerView.Adapter<RecyclerFavoritosAdapter.FavoritosViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = FavoritosViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.item_favoritos, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_favoritos,
+            parent, false)
     )
 
     override fun onBindViewHolder(
@@ -36,7 +38,11 @@ class RecyclerFavoritosAdapter(
     inner class FavoritosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val capa: ImageView = itemView.findViewById(R.id.recItemCanais)
         private val nome: TextView = itemView.findViewById(R.id.title)
+        private val buttonDel: ImageView = itemView.findViewById(R.id.imageViewdel)
         fun bind (listaFavoritos: Favoritos){
+  //          buttonDel.setOnClickListener {
+    //            Toast.makeText(itemView.context, "Favorito deletado", Toast.LENGTH_LONG).show()
+      //      }
 
         }
 

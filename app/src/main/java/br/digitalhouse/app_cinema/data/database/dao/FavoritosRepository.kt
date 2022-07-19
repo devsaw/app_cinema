@@ -6,6 +6,7 @@ import br.digitalhouse.app_cinema.data.database.Favoritos
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+
 class FavoritosRepository(context: Context) {
 
     private val db = Room.databaseBuilder(
@@ -14,7 +15,7 @@ class FavoritosRepository(context: Context) {
     ).build()
 
 
-    suspend fun saveFavorite(favoritos: Favoritos) =
+    suspend fun insertFavorite(favoritos: Favoritos) =
         withContext(Dispatchers.IO) {
         db.getFavoritosDAO().insert(favoritos)
     }
@@ -28,6 +29,10 @@ class FavoritosRepository(context: Context) {
         withContext(Dispatchers.IO) {
         db.getFavoritosDAO().getAll()
     }
+    suspend fun update(favoritos: Favoritos) =
+        withContext(Dispatchers.IO) {
+            db.getFavoritosDAO().update(favoritos)
+        }
 
 
 }

@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Favoritos(
-    @PrimaryKey(autoGenerate = true) var id: Int?,
+    @PrimaryKey(autoGenerate = true)
+    var id: Int,
     @ColumnInfo var title: String,
     @ColumnInfo var imagemfilmes: String
     )

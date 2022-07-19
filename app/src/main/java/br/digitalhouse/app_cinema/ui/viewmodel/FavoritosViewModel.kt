@@ -2,8 +2,9 @@ package br.digitalhouse.app_cinema.ui.viewmodel
 
 import android.app.Application
 
-import android.content.Context
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 import androidx.lifecycle.viewModelScope
 import br.digitalhouse.app_cinema.data.database.Favoritos
@@ -12,6 +13,9 @@ import kotlinx.coroutines.launch
 
 class FavoritosViewModel(application: Application): AndroidViewModel(application) {
 
+    var getFavoritos = MutableLiveData<List<Favoritos>>()
+    var getFavoritosLiveData: LiveData<List<Favoritos>> = getFavoritos
+
     private val favoritosRepository: FavoritosRepository by lazy {
         FavoritosRepository(application)
     }
@@ -19,7 +23,7 @@ class FavoritosViewModel(application: Application): AndroidViewModel(application
 
     fun salveFavorite(favoritos: Favoritos) =
         viewModelScope.launch {
-            favoritosRepository.saveFavorite(favoritos)
+            favoritosRepository.insertFavorite(favoritos)
             //livedata observer
 
         }
@@ -27,7 +31,7 @@ class FavoritosViewModel(application: Application): AndroidViewModel(application
 
     fun getSalveFavorite() =
         viewModelScope.launch {
-            favoritosRepository.getAll()
+           getFavoritos.value = favoritosRepository.getAll()
         }
 
     fun deleteFavoritos(favoritos: Favoritos) =

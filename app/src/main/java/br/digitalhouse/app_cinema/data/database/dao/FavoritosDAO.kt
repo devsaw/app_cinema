@@ -9,11 +9,14 @@ interface FavoritosDAO {
     @Query("SELECT * FROM favoritos")
     suspend fun getAll(): MutableList<Favoritos>
 
-    @Insert()
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(filmesFavoritos: Favoritos)
-    //onConflict = OnConflictStrategy.REPLACE
+    /* onConflict = OnConflictStrategy.REPLACE */
 
     @Delete
     fun delete(filmesFavoritos: Favoritos)
+
+    @Update
+    fun update(filmesFavoritos: Favoritos)
 
 }
