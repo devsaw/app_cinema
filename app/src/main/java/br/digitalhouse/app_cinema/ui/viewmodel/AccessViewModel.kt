@@ -17,7 +17,7 @@ class AccessViewModel : ViewModel() {
 
     var firebaseAuth = Firebase.auth
     lateinit var gso : GoogleSignInOptions
-    val GOOGLE_REQUEST_CODE = 1000
+    val GOOGLE_REQUEST_CODE = 1
 
 
     private var onUserRequestToRegister = MutableLiveData<Boolean>()

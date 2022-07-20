@@ -13,7 +13,6 @@ import br.digitalhouse.app_cinema.ui.viewmodel.FavoritosViewModel
 import com.squareup.picasso.Picasso
 
 class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
-   // var TAG = "Filme Salvo"
     private lateinit var titulo: TextView
     private lateinit var overView: TextView
     private lateinit var image: ImageView
@@ -27,12 +26,9 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // viewModel = ViewModelProvider(this)[FavoritosViewModel::class.java]
         startView()
         getInfoMovies()
         setupListeners()
-
     }
 
     fun setupListeners() {
@@ -47,7 +43,7 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
                 Toast.LENGTH_LONG
             ).show()
         }
-        //Log.i(TAG, "Informação")
+        Log.i("TAG", "Filme Salvo")
     }
 
     private fun startView() {

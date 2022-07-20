@@ -45,6 +45,7 @@
         android:maxLines="1"
         android:textColorHint="@color/white"
         android:textSize="20dp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,6 +61,7 @@
         android:maxLength="16"
         android:maxLines="1"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
