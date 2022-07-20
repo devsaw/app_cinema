@@ -31,7 +31,7 @@ class FavoritosFragment : Fragment(R.layout.fragment_favoritos) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startView(view)
-        observer()
+       // observer()
        // exibeLista()
 
 
@@ -53,7 +53,7 @@ class FavoritosFragment : Fragment(R.layout.fragment_favoritos) {
 
           //  favoritosViewModel.updateFavoritos(it)
 
-            //Toast.makeText(requireContext(), it.get(it.lastIndex).title.toString(), Toast.LENGTH_LONG).show()
+          //  Toast.makeText(requireContext(), it.get(it.lastIndex).title.toString(), Toast.LENGTH_LONG).show()
 
         }
 
