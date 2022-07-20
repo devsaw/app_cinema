@@ -20,19 +20,14 @@ class RecyclerHorizontalAdapter(
         LayoutInflater.from(parent.context).inflate(R.layout.item_filmes, parent, false)
     )
 
-
-    override fun onBindViewHolder(holder: HorizontalHolder, position: Int) {
+    override fun onBindViewHolder(holder: HorizontalHolder, position: Int) =
         holder.bind(populares[position])
-    }
 
     override fun getItemCount(): Int = populares.size
-
 
     inner class HorizontalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imagem = itemView.findViewById<ImageView>(R.id.film_card)
         private val titulos = itemView.findViewById<TextView>(R.id.titulos)
-
-
 
         fun bind(popular: Popular) {
             val imageURL = getImageUrl(popular.movies)

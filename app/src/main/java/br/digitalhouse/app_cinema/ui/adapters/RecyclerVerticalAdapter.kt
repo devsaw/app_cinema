@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.dto.Feed
 
-
 class RecyclerVerticalAdapter(
     private val listaFeed: MutableList<Feed> = mutableListOf(),
     private val onItemClickedListener: (title: String, overview: String, filmes: String) -> Unit
