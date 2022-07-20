@@ -30,7 +30,7 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
 
         // viewModel = ViewModelProvider(this)[FavoritosViewModel::class.java]
         startView()
-        getInfo()
+        getInfoMovies()
         setupListeners()
 
     }
@@ -39,7 +39,7 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
         button.setOnClickListener {
             var addFavoritos = Favoritos(0, nameMovie!!, imageMovie!!)
             viewModel.saveFavorite(addFavoritos)
-          //  viewModel.getSaveFavorite()
+            //  viewModel.getSaveFavorite()
             Thread.sleep(1000)
             Toast.makeText(
                 applicationContext,
@@ -57,11 +57,11 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
         button = findViewById(R.id.starButton)
     }
 
-    private fun getInfo() {
+    private fun getInfoMovies() {
         val extra = intent.extras!!
-        nameMovie = extra.getString("title")!!
+        val nameMovie = extra.getString("title")
         val descriptionMovie = extra.getString("overview")
-        imageMovie = extra.getString("filmes")!!
+        val imageMovie = extra.getString("filmes")
         titulo.text = nameMovie
         overView.text = descriptionMovie
         Picasso.get()
