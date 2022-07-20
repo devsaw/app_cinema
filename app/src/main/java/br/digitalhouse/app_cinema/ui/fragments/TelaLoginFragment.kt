@@ -52,9 +52,9 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
 
     private fun observer() {
         accessViewModel.userAuthLiveData.observe(viewLifecycleOwner) { status ->
-            when (status) {
-                true ->  navigatioToPrincipal()
-                false -> showMessage("Dados incorretos!")
+         when (status) {
+            true ->  navigatioToPrincipal()
+               false -> showMessage("Dados incorretos!")
             }
         }
     }

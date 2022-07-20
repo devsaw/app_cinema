@@ -25,9 +25,6 @@
         android:label="fragment_tela_login"
         tools:layout="@layout/fragment_tela_login" >
         <action
-            android:id="@+id/action_telaLoginFragment_to_telaRecuperarSenhaFragment"
-            app:destination="@id/telaRecuperarSenhaFragment" />
-        <action
             android:id="@+id/action_telaLoginFragment_to_telaPrincipalFragment"
             app:destination="@id/telaPrincipalFragment" />
     </fragment>
@@ -40,11 +37,6 @@
             android:id="@+id/action_telaCriarContaFragment_to_telaLoginFragment"
             app:destination="@id/telaLoginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/telaRecuperarSenhaFragment"
-        android:name="br.digitalhouse.app_cinema.ui.fragments.TelaRecuperarSenhaFragment"
-        android:label="fragment_tela_recuperar_senha"
-        tools:layout="@layout/fragment_tela_recuperar_senha" />
     <fragment
         android:id="@+id/telaPrincipalFragment"
         android:name="br.digitalhouse.app_cinema.ui.fragments.TelaPrincipalFragment"

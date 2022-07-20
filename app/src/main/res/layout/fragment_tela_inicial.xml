@@ -14,7 +14,6 @@
         android:layout_marginTop="384dp"
         android:background="@null"
         android:src="@drawable/criarconta"
-        app:layout_constraintBottom_toTopOf="@+id/logoFaceB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,23 +54,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/logoFaceB"
-        android:layout_width="200dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="492dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fb"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/logoGmail"
-        android:layout_width="200dp"
-        android:layout_height="111dp"
-        android:layout_marginTop="492dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="133dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="532dp"
+        android:layout_marginEnd="136dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gmail"
