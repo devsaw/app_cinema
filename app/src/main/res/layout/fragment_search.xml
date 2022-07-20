@@ -14,7 +14,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="1dp"
-        android:background="@color/white"
+        android:background="@color/redt"
         android:focusable="true"
         android:iconifiedByDefault="false"
         android:importantForAccessibility="yes"
