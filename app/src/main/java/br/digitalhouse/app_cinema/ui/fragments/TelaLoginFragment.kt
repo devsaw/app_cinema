@@ -15,9 +15,9 @@ import br.digitalhouse.app_cinema.ui.viewmodel.AccessViewModel
 
 class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterface {
     private lateinit var accessViewModel: AccessViewModel
-    private lateinit var loginTxt: EditText
-    private lateinit var senhaTxt: EditText
-    private lateinit var btnLogar: ImageButton
+    private lateinit var emailTxt: EditText
+    private lateinit var passwordTxt: EditText
+    private lateinit var sigInbtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,26 +32,26 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
     }
 
     private fun viewInit(view: View) {
-        senhaTxt = view.findViewById(R.id.editTextSenha)
-        loginTxt = view.findViewById(R.id.editTextUsuario)
-        btnLogar = view.findViewById(R.id.btnLogarLogin)
+        passwordTxt = view.findViewById(R.id.editTextSenha)
+        emailTxt = view.findViewById(R.id.editTextUsuario)
+        sigInbtn = view.findViewById(R.id.btnLogarLogin)
     }
 
     fun setupListener() {
-        btnLogar.setOnClickListener {
-            var txtLogin = loginTxt.text.toString()
-            var txtSenha = senhaTxt.text.toString()
+        sigInbtn.setOnClickListener {
+            var txtLogin = emailTxt.text.toString()
+            var txtSenha = passwordTxt.text.toString()
             if (textIsBlank(txtLogin, txtSenha)) {
                 showMessage("Preencha os campos!")
             } else {
-               accessViewModel.makeLogin(txtLogin, txtSenha)
+                accessViewModel.onEmailSignIn(txtLogin, txtSenha)
 
             }
         }
     }
 
     private fun observer() {
-        accessViewModel.requestLoginLiveData.observe(viewLifecycleOwner) { status ->
+        accessViewModel.userAuthLiveData.observe(viewLifecycleOwner) { status ->
             when (status) {
                 true ->  navigatioToPrincipal()
                 false -> showMessage("Dados incorretos!")
@@ -71,4 +71,6 @@ class TelaLoginFragment : Fragment(R.layout.fragment_tela_login), MessageInterfa
     private fun textIsBlank(login: String, senha: String): Boolean {
         return login.isBlank() || senha.isBlank()
     }
+
+
 }
