@@ -2,6 +2,7 @@ package br.digitalhouse.app_cinema.ui.activities
 
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -12,6 +13,7 @@ import br.digitalhouse.app_cinema.ui.viewmodel.FavoritosViewModel
 import com.squareup.picasso.Picasso
 
 class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
+    var TAG = "Filme Salvo"
     private lateinit var titulo: TextView
     private lateinit var overView: TextView
     private lateinit var image: ImageView
@@ -36,15 +38,16 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
     fun setupListeners() {
         button.setOnClickListener {
             var addFavoritos = Favoritos(0, nameMovie!!, imageMovie!!)
-            viewModel.salveFavorite(addFavoritos)
-            viewModel.getSalveFavorite()
+            viewModel.saveFavorite(addFavoritos)
+          //  viewModel.getSaveFavorite()
             Thread.sleep(1000)
             Toast.makeText(
                 applicationContext,
-                "Filme adicionado aos favoritos com sucesso",
+                "Filme adcionado aos Favoritos.",
                 Toast.LENGTH_LONG
             ).show()
         }
+        Log.i(TAG, "Informação")
     }
 
     private fun startView() {

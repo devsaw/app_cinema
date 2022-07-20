@@ -9,5 +9,7 @@ data class Favoritos(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
     @ColumnInfo var title: String,
-    @ColumnInfo var imagemfilmes: String
+    @ColumnInfo var pictureMovie: String?
     )
+
+

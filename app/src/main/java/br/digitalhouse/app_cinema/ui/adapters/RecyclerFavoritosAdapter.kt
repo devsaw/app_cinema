@@ -9,43 +9,66 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.digitalhouse.app_cinema.R
 import br.digitalhouse.app_cinema.data.database.Favoritos
-import br.digitalhouse.app_cinema.data.dto.Names
+import com.squareup.picasso.Picasso
 
 class RecyclerFavoritosAdapter(
-    private val listaFavoritos: MutableList<Favoritos> = mutableListOf()):
+    private val listaFavoritos: MutableList<Favoritos> = mutableListOf()
+) :
     RecyclerView.Adapter<RecyclerFavoritosAdapter.FavoritosViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = FavoritosViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.item_favoritos,
-            parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = FavoritosViewHolder(
+        LayoutInflater.from(parent.context).inflate(
+            R.layout.item_favoritos,
+            parent, false
+        )
     )
 
     override fun onBindViewHolder(
         holder: RecyclerFavoritosAdapter.FavoritosViewHolder,
         position: Int
-    ) =
-        holder.bind(listaFavoritos[position])
+    ) = holder.bind(listaFavoritos[position])
 
 
     override fun getItemCount(): Int = listaFavoritos.size
-
-    fun update() {
+    fun add(lista: Favoritos) {
         this.listaFavoritos.clear()
-       // this.listaFavoritos.addAll()
+        this.listaFavoritos.add(lista)
         this.notifyDataSetChanged()
+
     }
 
-    inner class FavoritosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        private val capa: ImageView = itemView.findViewById(R.id.recItemCanais)
-        private val nome: TextView = itemView.findViewById(R.id.title)
+
+    /*fun setupListeners() {
+        buttonDel.setOnClickListener {
+            var addFavoritos = Favoritos(0, nameMovie!!, imageMovie!!)
+            viewModel.saveFavorite(addFavoritos)
+            viewModel.getSaveFavorite()
+            Thread.sleep(1000)
+            Toast.makeText(
+                applicationContext,
+                "Filme adicionado aos favoritos com sucesso",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }*/
+
+    inner class FavoritosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val pictureFMovie: ImageView = itemView.findViewById(R.id.recItemPicture)
+        private val titleMovie: TextView = itemView.findViewById(R.id.title)
         private val buttonDel: ImageView = itemView.findViewById(R.id.imageViewdel)
-        fun bind (listaFavoritos: Favoritos){
-  //          buttonDel.setOnClickListener {
-    //            Toast.makeText(itemView.context, "Favorito deletado", Toast.LENGTH_LONG).show()
-      //      }
+
+        fun bind(listaFavoritos: Favoritos) {
+
+            titleMovie.text = listaFavoritos.title
+            Picasso.get()
+                .load(listaFavoritos.pictureMovie)
+                .into(pictureFMovie)
 
         }
 
+
     }
 
+
 }
+

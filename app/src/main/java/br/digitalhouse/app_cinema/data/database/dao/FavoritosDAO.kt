@@ -1,5 +1,6 @@
 package br.digitalhouse.app_cinema.data.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import br.digitalhouse.app_cinema.data.database.Favoritos
 
@@ -10,13 +11,12 @@ interface FavoritosDAO {
     suspend fun getAll(): MutableList<Favoritos>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(filmesFavoritos: Favoritos)
-    /* onConflict = OnConflictStrategy.REPLACE */
+    suspend fun insert(favoritos: Favoritos)
 
     @Delete
-    fun delete(filmesFavoritos: Favoritos)
+    fun delete(favoritos: Favoritos)
 
     @Update
-    fun update(filmesFavoritos: Favoritos)
+    fun update(favoritos: Favoritos)
 
 }

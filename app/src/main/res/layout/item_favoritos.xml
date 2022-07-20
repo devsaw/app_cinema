@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/recItemCanais"
+        android:id="@+id/recItemPicture"
         android:layout_width="133dp"
         android:layout_height="177dp"
         android:backgroundTint="@color/black"
@@ -24,7 +24,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/recItemCanais"
+        android:layout_toEndOf="@+id/recItemPicture"
         android:fontFamily="@font/nosifer"
         android:text="Filme"
         android:textAlignment="center"
@@ -41,7 +41,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/recItemCanais"
+        app:layout_constraintStart_toEndOf="@+id/recItemPicture"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 

@@ -11,7 +11,7 @@ import br.digitalhouse.app_cinema.data.database.Favoritos
 import br.digitalhouse.app_cinema.data.database.dao.FavoritosRepository
 import kotlinx.coroutines.launch
 
-class FavoritosViewModel(application: Application): AndroidViewModel(application) {
+class FavoritosViewModel(application: Application) : AndroidViewModel(application) {
 
     var getFavoritos = MutableLiveData<List<Favoritos>>()
     var getFavoritosLiveData: LiveData<List<Favoritos>> = getFavoritos
@@ -20,23 +20,33 @@ class FavoritosViewModel(application: Application): AndroidViewModel(application
         FavoritosRepository(application)
     }
 
-
-    fun salveFavorite(favoritos: Favoritos) =
+    fun saveFavorite(favoritos: Favoritos) =
         viewModelScope.launch {
             favoritosRepository.insertFavorite(favoritos)
             //livedata observer
 
         }
 
-
-    fun getSalveFavorite() =
+    fun getSaveFavorite() =
         viewModelScope.launch {
-           getFavoritos.value = favoritosRepository.getAll()
+            getFavoritos.value = favoritosRepository.getAll()
         }
 
     fun deleteFavoritos(favoritos: Favoritos) =
         viewModelScope.launch {
             favoritosRepository.delete(favoritos)
         }
+
+    /*Boa, então acho que vai ter que passar esse for pra função de update
+      Passar o it como parâmetro e  fazer o for dentro do update
+      E mudar o parâmetro esperado na função update de favorito para lista de favorito
+      Aí ele faz o clean e depois faz o for pra atualizar os valores...*/
+
+    fun updateFavoritos(favoritos: Favoritos) {
+        viewModelScope.launch {
+                favoritosRepository.update(favoritos)
+            }
+
+    }
 }
 
