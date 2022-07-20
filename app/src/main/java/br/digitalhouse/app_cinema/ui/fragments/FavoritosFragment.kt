@@ -31,9 +31,8 @@ class FavoritosFragment : Fragment(R.layout.fragment_favoritos) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startView(view)
-       // observer()
+        observer()
        // exibeLista()
-
 
     }
     private fun updateRepositoryInfo(){
