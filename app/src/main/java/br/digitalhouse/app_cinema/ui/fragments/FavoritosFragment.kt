@@ -34,7 +34,6 @@ class FavoritosFragment : Fragment(R.layout.fragment_favoritos) {
         observer()
        // exibeLista()
 
-
     }
     private fun updateRepositoryInfo(){
         favoritosViewModel.getSaveFavorite()
@@ -53,7 +52,7 @@ class FavoritosFragment : Fragment(R.layout.fragment_favoritos) {
 
           //  favoritosViewModel.updateFavoritos(it)
 
-            //Toast.makeText(requireContext(), it.get(it.lastIndex).title.toString(), Toast.LENGTH_LONG).show()
+          //  Toast.makeText(requireContext(), it.get(it.lastIndex).title.toString(), Toast.LENGTH_LONG).show()
 
         }
 

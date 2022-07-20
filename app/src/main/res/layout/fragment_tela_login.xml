@@ -45,6 +45,7 @@
         android:maxLines="1"
         android:textColorHint="@color/white"
         android:textSize="20dp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,12 +55,13 @@
         android:layout_width="243dp"
         android:layout_height="67dp"
         android:layout_marginTop="348dp"
-        android:ems="10"
+        android:ems="15"
         android:hint="Digite sua senha"
-        android:inputType="textShortMessage|textMultiLine"
-        android:maxLength="16"
+        android:inputType="textPassword"
+        android:maxLength="20"
         android:maxLines="1"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,15 +78,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btnEsqueciSenhaLogin"
-        android:layout_width="307dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="532dp"
-        android:background="@null"
-        android:src="@drawable/esquecisenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

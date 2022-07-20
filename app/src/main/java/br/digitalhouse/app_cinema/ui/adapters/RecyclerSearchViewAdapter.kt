@@ -13,7 +13,8 @@ import br.digitalhouse.app_cinema.data.dto.Names
 import br.digitalhouse.app_cinema.data.dto.Resultados
 import com.squareup.picasso.Picasso
 
-class RecyclerSearchViewAdapter(private val results: MutableList<Resultados> = mutableListOf()) :
+class RecyclerSearchViewAdapter(private val results: MutableList<Resultados> = mutableListOf(),
+        private val onItemClicked: (title: String, overviews: String, filmes: String) -> Unit) :
     RecyclerView.Adapter<RecyclerSearchViewAdapter.SearchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = SearchViewHolder(
@@ -36,12 +37,13 @@ class RecyclerSearchViewAdapter(private val results: MutableList<Resultados> = m
     inner class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val foto: ImageView = itemView.findViewById(R.id.foto)
         private val nome: TextView = itemView.findViewById(R.id.nome)
-        private val rvSv: RecyclerView = itemView.findViewById(R.id.recyclerViewSearch)
         fun bind(result: Resultados) {
-            rvSv.layoutManager = LinearLayoutManager(itemView.context, RecyclerView.VERTICAL, false)
-            rvSv.adapter = RecyclerSearchViewAdapter(results)
+            val imageURL = getImageSearchUrl(result.pictures)
+            itemView.rootView.setOnClickListener{
+                onItemClicked.invoke(result.titleMovie, result.overview, imageURL)
+            }
             Picasso.get()
-                .load(getImageSearchUrl(result.pictures))
+                .load(imageURL)
                 .into(foto)
             nome.text = result.titleMovie
         }

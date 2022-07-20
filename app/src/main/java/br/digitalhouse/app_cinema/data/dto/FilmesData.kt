@@ -24,4 +24,6 @@ data class Resultados(
 
     @SerializedName("poster_path")
     val pictures: String,
+
+    val overview: String,
 )

@@ -37,10 +37,7 @@ class FavoritosViewModel(application: Application) : AndroidViewModel(applicatio
             favoritosRepository.delete(favoritos)
         }
 
-    /*Boa, então acho que vai ter que passar esse for pra função de update
-      Passar o it como parâmetro e  fazer o for dentro do update
-      E mudar o parâmetro esperado na função update de favorito para lista de favorito
-      Aí ele faz o clean e depois faz o for pra atualizar os valores...*/
+
 
     fun updateFavoritos(favoritos: Favoritos) {
         viewModelScope.launch {
