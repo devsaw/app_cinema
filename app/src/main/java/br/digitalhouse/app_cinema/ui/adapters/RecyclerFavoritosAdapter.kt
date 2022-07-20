@@ -58,17 +58,12 @@ class RecyclerFavoritosAdapter(
         private val buttonDel: ImageView = itemView.findViewById(R.id.imageViewdel)
 
         fun bind(listaFavoritos: Favoritos) {
-
             titleMovie.text = listaFavoritos.title
             Picasso.get()
                 .load(listaFavoritos.pictureMovie)
                 .into(pictureFMovie)
 
         }
-
-
     }
-
-
 }
 

@@ -43,7 +43,6 @@ class DetalhesActivity : AppCompatActivity(R.layout.activity_detalhes) {
                 Toast.LENGTH_LONG
             ).show()
         }
-        Log.i("TAG", "Filme Salvo")
     }
 
     private fun startView() {

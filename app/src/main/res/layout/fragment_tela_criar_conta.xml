@@ -39,7 +39,7 @@
         android:layout_marginTop="384dp"
         android:ems="10"
         android:hint="Digite sua senha"
-        android:inputType="textShortMessage|textMultiLine"
+        android:inputType="textPassword"
         android:maxLength="16"
         android:maxLines="1"
         android:textColorHint="@color/white"

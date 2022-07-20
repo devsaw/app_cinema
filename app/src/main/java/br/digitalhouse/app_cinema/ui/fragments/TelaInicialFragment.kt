@@ -75,7 +75,6 @@ class TelaInicialFragment : Fragment(R.layout.fragment_tela_inicial), MessageInt
                     showMessage("Erro ao Logar")
                 }
             }
-
         }
     }
 

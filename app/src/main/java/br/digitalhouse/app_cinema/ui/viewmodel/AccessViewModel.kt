@@ -17,7 +17,7 @@ class AccessViewModel : ViewModel() {
 
     var firebaseAuth = Firebase.auth
     lateinit var gso : GoogleSignInOptions
-    val GOOGLE_REQUEST_CODE = 1
+    val GOOGLE_REQUEST_CODE = 120
 
 
     private var onUserRequestToRegister = MutableLiveData<Boolean>()
@@ -60,5 +60,4 @@ class AccessViewModel : ViewModel() {
             .build()
         return GoogleSignIn.getClient(activity,gso).signInIntent
     }
-
 }
