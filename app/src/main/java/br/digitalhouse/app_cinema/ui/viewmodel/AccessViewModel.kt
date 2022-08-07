@@ -3,6 +3,7 @@ package br.digitalhouse.app_cinema.ui.viewmodel
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,6 +26,9 @@ class AccessViewModel : ViewModel() {
 
     private var onUserRequestToSignIn = MutableLiveData<Boolean>()
     var userAuthLiveData : LiveData<Boolean> = onUserRequestToSignIn
+
+    private val onUserRequestToGoogleSignIn = MutableLiveData<Boolean>()
+    val onUserRequestToGoogleSignInLiveData: LiveData<Boolean> = onUserRequestToGoogleSignIn
 
     fun onCreateUser (email : String , password : String?) {
         if(password != null) {
@@ -54,10 +58,19 @@ class AccessViewModel : ViewModel() {
 
 
     fun signInGoogleConfig (activity: Activity) : Intent {
-        gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("1023100515581-i66rv8nnq68ubo5lo5in7q868c9qaaue.apps.googleusercontent.com")
-            .requestEmail()
-            .build()
-        return GoogleSignIn.getClient(activity,gso).signInIntent
+        try {
+            gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("1023100515581-i66rv8nnq68ubo5lo5in7q868c9qaaue.apps.googleusercontent.com")
+                .requestEmail()
+                .build()
+        }catch (e: Exception) {
+            Log.e("Google", "Erro")
+        }
+        return GoogleSignIn.getClient(activity, gso).signInIntent
+    }
+
+    fun onGoogleSignInSucess(data: Intent) {
+        GoogleSignIn.getSignedInAccountFromIntent(data)
+        onUserRequestToGoogleSignIn.value = true
     }
 }

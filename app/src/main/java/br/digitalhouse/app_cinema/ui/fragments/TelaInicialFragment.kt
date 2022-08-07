@@ -1,6 +1,7 @@
 package br.digitalhouse.app_cinema.ui.fragments
 
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -34,6 +35,7 @@ class TelaInicialFragment : Fragment(R.layout.fragment_tela_inicial), MessageInt
         super.onViewCreated(view, savedInstanceState)
         initView(view)
         navigationToScreen()
+        observer()
     }
 
     private fun navigationToScreen() {
@@ -60,19 +62,33 @@ class TelaInicialFragment : Fragment(R.layout.fragment_tela_inicial), MessageInt
         btnLogarInicial = view.findViewById(R.id.btnLogarInicial)
     }
 
+    private fun observer(){
+        accessViewModel.onUserRequestToGoogleSignInLiveData.observe(viewLifecycleOwner) {
+            if (it != null) {
+                showMessage("Usuário logado!")
+            } else {
+                showMessage("Falha ao logar!")
+            }
+        }
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == accessViewModel.GOOGLE_REQUEST_CODE) {
-            val accountTask = GoogleSignIn.getSignedInAccountFromIntent(data)
-            val credential = GoogleAuthProvider.getCredential(accountTask.result.idToken, null)
-            firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    val user = accountTask.result
-                    accessViewModel.onCreateUser(
-                        user.email.toString(),null
-                    )
-                } else {
-                    showMessage("Erro ao Logar")
+            if (resultCode == Activity.RESULT_OK) {
+                accessViewModel.onGoogleSignInSucess(data!!)
+                val accountTask = GoogleSignIn.getSignedInAccountFromIntent(data)
+                val credential = GoogleAuthProvider.getCredential(accountTask.result.idToken, null)
+                firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        val user = accountTask.result
+                        accessViewModel.onCreateUser(
+                            user.email.toString(),
+                            null
+                        )
+                    } else {
+                        showMessage("Erro ao logar!")
+                    }
                 }
             }
         }
